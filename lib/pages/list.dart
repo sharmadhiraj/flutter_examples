@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../model/page.dart';
 import '../util/data.dart';
 import '../util/method.dart';
+import 'bottom-nav-icon-size.dart';
+import 'network-example.dart';
 import 'silver-appbar-with-tabbar.dart';
 
 class ListScreen extends StatelessWidget {
@@ -30,6 +32,8 @@ class ListScreen extends StatelessWidget {
   List<Page> pages() {
     return [
       Page("Silver AppBar With ToolBar", SilverAppBarWithTabBarScreen()),
+      Page("Bottom Nav Icon Size", BottomNavIconSize()),
+      Page("Network Example", NetworkExampleScreen()),
     ];
   }
 }

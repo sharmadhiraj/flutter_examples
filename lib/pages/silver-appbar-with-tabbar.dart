@@ -21,10 +21,8 @@ class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
       body: new CustomScrollView(
         slivers: <Widget>[
           new SliverAppBar(
+            title: Text("Silver AppBar With ToolBar"),
             pinned: true,
-            flexibleSpace: new FlexibleSpaceBar(
-              title: new Text("Some title"),
-            ),
             expandedHeight: 160.0,
             bottom: new TabBar(
               tabs: [
