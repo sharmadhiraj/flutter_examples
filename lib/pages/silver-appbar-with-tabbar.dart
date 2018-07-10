@@ -33,14 +33,14 @@ class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
               controller: controller,
             ),
           ),
-          new SliverList(
-            delegate: new SliverChildBuilderDelegate(
-              (context, idx) {
-                return new ListTile(
-                  title: new Text("$idx"),
-                );
-              },
-              childCount: 20,
+          new SliverFillRemaining(
+            child: TabBarView(
+              controller: controller,
+              children: <Widget>[
+                Text("Tab 1"),
+                Text("Tab 2"),
+                Text("Tab 3"),
+              ],
             ),
           ),
         ],
