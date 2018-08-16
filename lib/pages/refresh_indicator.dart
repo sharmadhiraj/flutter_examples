@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class RefreshIndicatorScreen extends StatefulWidget {
+class SwipeToRefreshExample extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _RefreshIndicatorScreenState();
+    return _SwipeToRefreshState();
   }
 }
 
-class _RefreshIndicatorScreenState extends State<RefreshIndicatorScreen> {
+class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       new GlobalKey<RefreshIndicatorState>();
   User user = User("Default User",
@@ -65,10 +65,8 @@ class _RefreshIndicatorScreenState extends State<RefreshIndicatorScreen> {
   }
 
   Future<Null> _refresh() {
-    return getUser().then((u) {
-      setState(() {
-        user = u;
-      });
+    return getUser().then((_user) {
+      setState(() => user = _user);
     });
   }
 }

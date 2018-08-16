@@ -65,7 +65,7 @@ class ListScreen extends StatelessWidget {
       Page("SnackBar Dialog", SnackBarPage()),
       Page("Test State", TestStateLessScreen()),
       Page("Web View Example", WebViewScreen()),
-      Page("Pull To Refresh Example", RefreshIndicatorScreen()),
+      Page("Pull To Refresh Example", SwipeToRefreshExample()),
     ];
   }
 }
