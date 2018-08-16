@@ -28,7 +28,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Refresh Indicator"),
+        title: Text("Swipe To Refresh"),
         actions: <Widget>[
           new IconButton(
               icon: const Icon(Icons.refresh),
