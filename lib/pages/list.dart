@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examples/pages/location/location.dart';
 import 'package:flutter_examples/pages/refresh_indicator.dart';
 import 'package:flutter_examples/pages/snackbar-dialog.dart';
 import 'package:flutter_examples/pages/test-state.dart';
@@ -66,6 +67,7 @@ class ListScreen extends StatelessWidget {
       Page("Test State", TestStateLessScreen()),
       Page("Web View Example", WebViewScreen()),
       Page("Pull To Refresh Example", SwipeToRefreshExample()),
+      Page("Location", LocationScreen()),
     ];
   }
 }
