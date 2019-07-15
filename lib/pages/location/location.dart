@@ -1,7 +1,5 @@
-import 'dart:async';
-import 'package:geolocator/geolocator.dart';
-
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class LocationScreen extends StatelessWidget {
   @override
@@ -27,6 +25,7 @@ class LocationScreen extends StatelessWidget {
                     ? "Location: ${location.latitude},${location.longitude}"
                     : "Error");
             }
+            return Text("");
           },
         ),
       ),

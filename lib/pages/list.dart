@@ -3,6 +3,7 @@ import 'package:flutter_examples/pages/location/location.dart';
 import 'package:flutter_examples/pages/refresh_indicator.dart';
 import 'package:flutter_examples/pages/snackbar-dialog.dart';
 import 'package:flutter_examples/pages/test-state.dart';
+import 'package:flutter_examples/pages/user-info.dart';
 import 'package:flutter_examples/pages/webview-example.dart';
 
 import '../model/page.dart';
@@ -68,6 +69,7 @@ class ListScreen extends StatelessWidget {
       Page("Web View Example", WebViewScreen()),
       Page("Pull To Refresh Example", SwipeToRefreshExample()),
       Page("Location", LocationScreen()),
+      Page("User Info", UserInfoScreen()),
     ];
   }
 }
