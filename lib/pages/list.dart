@@ -5,6 +5,7 @@ import 'package:flutter_examples/pages/snackbar-dialog.dart';
 import 'package:flutter_examples/pages/test-state.dart';
 import 'package:flutter_examples/pages/user-info.dart';
 import 'package:flutter_examples/pages/webview-example.dart';
+import 'package:flutter_examples/pages/webview_back.dart';
 
 import '../model/page.dart';
 import '../util/data.dart';
@@ -70,6 +71,7 @@ class ListScreen extends StatelessWidget {
       Page("Pull To Refresh Example", SwipeToRefreshExample()),
       Page("Location", LocationScreen()),
       Page("User Info", UserInfoScreen()),
+      Page("WebView With Back", WebviewInFlutter()),
     ];
   }
 }
