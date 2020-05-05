@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SnackBarPage extends StatelessWidget {
+class SnackBarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(

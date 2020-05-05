@@ -13,7 +13,6 @@ class _WebviewInFlutterState extends State<WebviewInFlutter> {
 
   @override
   Widget build(BuildContext context) {
-
     return WebviewScaffold(
       url: 'https://google.com',
       hidden: true,
