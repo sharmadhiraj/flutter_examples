@@ -5,6 +5,7 @@ import 'package:flutter_examples/Screens/test-state.dart';
 import 'package:flutter_examples/Screens/user-info.dart';
 import 'package:flutter_examples/Screens/webview-example.dart';
 import 'package:flutter_examples/Screens/webview_back.dart';
+import 'package:flutter_examples/screens/reload_state_on_resume.dart';
 import 'package:flutter_examples/screens/snackbar-dialog.dart';
 
 import '../model/screen.dart';
@@ -72,6 +73,7 @@ class ListScreen extends StatelessWidget {
       Screen("Location", LocationScreen()),
       Screen("User Info", UserInfoScreen()),
       Screen("WebView With Back", WebviewInFlutter()),
+      Screen("Reload State On Resume", FirstScreen("Reload State On Resume")),
     ];
   }
 }
