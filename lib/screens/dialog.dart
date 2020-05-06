@@ -3,34 +3,34 @@ import 'package:flutter/material.dart';
 class DialogExampleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var bodyProgress = new Container(
-      decoration: new BoxDecoration(
+    var bodyProgress = Container(
+      decoration: BoxDecoration(
           color: Colors.blue[200],
-          borderRadius: new BorderRadius.circular(2.0)),
-      width: 300.0,
-      height: 200.0,
+          borderRadius: BorderRadius.circular(2)),
+      width: 300,
+      height: 200,
 //color: Colors.blue,
       alignment: AlignmentDirectional.center,
-      child: new Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Center(
-            child: new SizedBox(
-              height: 50.0,
-              width: 50.0,
-              child: new CircularProgressIndicator(
+          Center(
+            child: SizedBox(
+              height: 50,
+              width: 50,
+              child: CircularProgressIndicator(
                 value: null,
-                strokeWidth: 7.0,
+                strokeWidth: 7,
               ),
             ),
           ),
-          new Container(
-            margin: const EdgeInsets.only(top: 25.0),
-            child: new Center(
-              child: new Text(
+          Container(
+            margin: const EdgeInsets.only(top: 25),
+            child: Center(
+              child: Text(
                 "Signing up...",
-                style: new TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ),
@@ -46,8 +46,8 @@ class DialogExampleScreen extends StatelessWidget {
           onPressed: () {
             showDialog(
                 context: context,
-                child: new AlertDialog(
-                  contentPadding: EdgeInsets.all(0.0),
+                child: AlertDialog(
+                  contentPadding: EdgeInsets.all(0),
                   content: bodyProgress,
                 ));
           },

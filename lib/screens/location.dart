@@ -9,7 +9,7 @@ class LocationScreen extends StatelessWidget {
         title: Text("User Location"),
       ),
       body: Center(
-        child: new FutureBuilder<Position>(
+        child: FutureBuilder<Position>(
           future: Geolocator()
               .getCurrentPosition(desiredAccuracy: LocationAccuracy.high),
           builder: (BuildContext context, AsyncSnapshot<Position> snapshot) {

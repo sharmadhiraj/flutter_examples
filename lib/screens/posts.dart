@@ -9,10 +9,8 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON
     return Post.fromJson(json.decode(response.body));
   } else {
-    // If that call was not successful, throw an error.
     throw Exception('Failed to load post');
   }
 }
@@ -35,19 +33,16 @@ class Post {
   }
 }
 
-class FirstFragment extends StatefulWidget {
-  FirstFragment(this.usertype, this.username);
-
-  final String usertype;
-  final String username;
+class NetworkCall extends StatefulWidget {
+  NetworkCall();
 
   @override
   State<StatefulWidget> createState() {
-    return FirstFragmentState();
+    return NetworkCallState();
   }
 }
 
-class FirstFragmentState extends State<FirstFragment> {
+class NetworkCallState extends State<NetworkCall> {
   void _fetchPost() {
     fetchPost().then((post) {
       _post = post;
@@ -59,29 +54,25 @@ class FirstFragmentState extends State<FirstFragment> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    final Size screenSize = MediaQuery.of(context).size;
-
-    return new Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text("Posts")),
-      body: new SingleChildScrollView(
-        padding: new EdgeInsets.all(5.0),
-        child: new Padding(
-          padding: new EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              new Container(
-                child: new RaisedButton(
-                  child: new Text('Call'),
-                  onPressed: () {
-                    _fetchPost();
-                  },
-                ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: RaisedButton(
+                child: Text('Call'),
+                onPressed: () {
+                  _fetchPost();
+                },
               ),
-              new Container(child: _post == null ? null : Text(_post.title))
-            ],
-          ),
+            ),
+            Container(
+                padding: const EdgeInsets.all(16),
+                child: _post == null ? null : Text(_post.title))
+          ],
         ),
       ),
     );

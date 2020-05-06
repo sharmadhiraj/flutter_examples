@@ -8,12 +8,12 @@ class DropDownButtonScreen extends StatefulWidget {
 }
 
 class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
-  String ddValue;
+  String defaultValue;
 
   @override
   void initState() {
     super.initState();
-    ddValue = "MEN";
+    defaultValue = "MEN";
   }
 
   @override
@@ -21,20 +21,20 @@ class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
     return Scaffold(
       appBar: AppBar(
         title: DropdownButtonHideUnderline(
-          child: new DropdownButton(
-            value: ddValue, //Default value
+          child: DropdownButton(
+            value: defaultValue,
             items: <DropdownMenuItem>[
-              new DropdownMenuItem(
+              DropdownMenuItem(
                 value: "MEN",
-                child: new Text('MEN'),
+                child: Text('MEN'),
               ),
-              new DropdownMenuItem(
+              DropdownMenuItem(
                 value: "WOMEN",
-                child: new Text('WOMEN'),
+                child: Text('WOMEN'),
               ),
             ],
             onChanged: (v) {
-              ddValue = v;
+              defaultValue = v;
               setState(() {});
             },
           ),
@@ -45,9 +45,9 @@ class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
   }
 
   Widget getBody() {
-    if (ddValue == "MEN") {
+    if (defaultValue == "MEN") {
       return Center(child: Text("Widget for men"));
-    } else if (ddValue == "WOMEN") {
+    } else if (defaultValue == "WOMEN") {
       return Center(child: Text("Widget for Women"));
     }
     return Center(child: Text("Widget not found"));

@@ -8,35 +8,39 @@ class WeatherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text("G.C. - WEATHER"),
+      appBar: AppBar(
+        title: Text("G.C. - WEATHER"),
         centerTitle: true,
         backgroundColor: Colors.blue[700],
       ),
-      body: new Container(
-        child: new ListView(
+      body: Container(
+        child: ListView(
           children: <Widget>[
-            new FutureBuilder<List<Post>>(
+            FutureBuilder<List<Post>>(
               future: fetchPosts(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   List<Post> posts = snapshot.data;
-                  return new Column(
+                  return Column(
                       children: posts
-                          .map((post) => new Column(
+                          .map((post) => Column(
                                 children: <Widget>[
-                                  new Text(post.temperature),
+                                  Card(
+                                      child: Padding(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Text(post.temperature),
+                                  )),
                                 ],
                               ))
                           .toList());
                 } else if (snapshot.hasError) {
                   return snapshot.error;
                 }
-                return new Center(
-                  child: new Column(
+                return Center(
+                  child: Column(
                     children: <Widget>[
-                      new Padding(padding: new EdgeInsets.all(50.0)),
-                      new CircularProgressIndicator(),
+                      Padding(padding: EdgeInsets.all(50)),
+                      CircularProgressIndicator(),
                     ],
                   ),
                 );
@@ -71,7 +75,7 @@ class Post {
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return new Post(
+    return Post(
       temperature: json['temperature'].toString(),
       rain: json['rain'].toString(),
       humidity: json['humidity'].toString(),

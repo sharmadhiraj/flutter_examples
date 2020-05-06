@@ -9,7 +9,7 @@ class WebviewInFlutter extends StatefulWidget {
 }
 
 class _WebviewInFlutterState extends State<WebviewInFlutter> {
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class _WebviewInFlutterState extends State<WebviewInFlutter> {
       withJavascript: true,
       withLocalStorage: true,
       appBar: AppBar(
-          leading: new IconButton(
-              icon: new Icon(Icons.arrow_back),
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back),
               onPressed: () {
                 flutterWebviewPlugin.canGoBack().then((value) {
                   if (value) {
@@ -35,13 +35,13 @@ class _WebviewInFlutterState extends State<WebviewInFlutter> {
             IconButton(
               icon: Icon(
                 Icons.refresh,
-                color: Color.fromRGBO(255, 255, 255, 1.0),
+                color: Color.fromRGBO(255, 255, 255, 1),
               ),
               onPressed: () => flutterWebviewPlugin
                   .reload(), // this is reloading the url that was provided to webview, not the current URL.
             )
           ],
-          elevation: 1.0,
+          elevation: 1,
           centerTitle: true,
           title: Text("Google Mobile")),
     );

@@ -13,9 +13,11 @@ class SwipeToRefreshExample extends StatefulWidget {
 
 class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-      new GlobalKey<RefreshIndicatorState>();
-  User user = User("Default User",
-      "https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg");
+      GlobalKey<RefreshIndicatorState>();
+  User user = User(
+    "Default User",
+    "https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg",
+  );
 
   @override
   void initState() {
@@ -30,7 +32,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
       appBar: AppBar(
         title: Text("Swipe To Refresh"),
         actions: <Widget>[
-          new IconButton(
+          IconButton(
               icon: const Icon(Icons.refresh),
               tooltip: 'Refresh',
               onPressed: () {
@@ -43,12 +45,12 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
           onRefresh: _refresh,
           child: ListView(children: [
             Padding(
-              padding: const EdgeInsets.only(top: 24.0),
+              padding: const EdgeInsets.only(top: 24),
               child: Center(
                 child: Column(
                   children: <Widget>[
-                    Image.network(user.image, height: 128.0, width: 128.0),
-                    SizedBox(height: 24.0),
+                    Image.network(user.image, height: 128, width: 128),
+                    SizedBox(height: 24),
                     Text(user.name),
                   ],
                 ),

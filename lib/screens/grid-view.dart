@@ -3,37 +3,29 @@ import 'package:flutter/material.dart';
 class GridViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget gridSection = new Expanded(
+    List<String> images = [];
+    for (int i = 1; i < 30; i++) {
+      images.add("https://i.picsum.photos/id/${i * 20}/200/200.jpg");
+    }
+
+    Widget gridSection = Expanded(
       flex: 1,
-      child: new GridView.count(
-          crossAxisCount: 3,
-          childAspectRatio: 1.0,
+      child: GridView.count(
+          crossAxisCount: 4,
+          childAspectRatio: 1,
           shrinkWrap: true,
-          mainAxisSpacing: 2.0,
-          crossAxisSpacing: 2.0,
-          padding: const EdgeInsets.all(4.0),
-          children: <String>[
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-            'http://www.for-example.org/img/main/forexamplelogo.png',
-          ].map((String url) {
-            return new GridTile(
-                child: new Image.network(url, fit: BoxFit.cover));
+          mainAxisSpacing: 1,
+          crossAxisSpacing: 1,
+          padding: const EdgeInsets.all(4),
+          children: images.map((String url) {
+            return GridTile(
+                child: Card(
+              child: Image.network(url, fit: BoxFit.cover),
+            ));
           }).toList()),
     );
 
-    Widget body = new Column(
-      // This makes each child fill the full width of the screen
+    Widget body = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
@@ -41,14 +33,11 @@ class GridViewScreen extends StatelessWidget {
       ],
     );
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Example 2 Page"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Grid Example"),
       ),
-      body: new Padding(
-        padding: new EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
-        child: body,
-      ),
+      body: body,
     );
   }
 }

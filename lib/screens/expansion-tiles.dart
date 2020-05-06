@@ -11,9 +11,9 @@ class ExpansionTilesExample extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: new ListView.builder(
+      body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          return new StuffInTiles(listofTiles[index]);
+          return StuffInTiles(listofTiles[index]);
         },
         itemCount: listofTiles.length,
       ),
@@ -32,10 +32,10 @@ class StuffInTiles extends StatelessWidget {
   }
 
   Widget _buildTiles(MyTile t) {
-    if (t.children.isEmpty) return new ListTile(title: new Text(t.title));
-    return new ExpansionTile(
-      key: new PageStorageKey<MyTile>(t),
-      title: new Text(t.title),
+    if (t.children.isEmpty) return ListTile(title: Text(t.title));
+    return ExpansionTile(
+      key: PageStorageKey<MyTile>(t),
+      title: Text(t.title),
       children: t.children.map(_buildTiles).toList(),
     );
   }
@@ -49,7 +49,7 @@ class MyTile {
 }
 
 List<MyTile> listofTiles = <MyTile>[
-  new MyTile('Animals', <MyTile>[
-    new MyTile('Dogs', <MyTile>[new MyTile('dog one '), new MyTile('dog two')])
+  MyTile('Animals', <MyTile>[
+    MyTile('Dogs', <MyTile>[MyTile('dog one '), MyTile('dog two')])
   ])
 ];

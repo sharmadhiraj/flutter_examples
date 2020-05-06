@@ -37,7 +37,7 @@ class _FirstScreenState extends State<FirstScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  new MaterialPageRoute(builder: (context) => SecondScreen()),
+                  MaterialPageRoute(builder: (context) => SecondScreen()),
                 ).then((value) {
                   setState(() {
                     message = DateTime.now().toIso8601String();

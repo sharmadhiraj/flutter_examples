@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 class AppBarWithTextMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Title"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Title"),
         actions: <Widget>[
-          new Container(),
+          Container(),
           Center(
-            child: new Text(
+            child: Text(
               "User name",
               textScaleFactor: 1.5,
-              style: new TextStyle(
-                fontSize: 12.0,
+              style: TextStyle(
+                fontSize: 12,
                 color: Colors.white,
               ),
             ),
           ),
-          new IconButton(
-            icon: new Icon(Icons.close),
+          IconButton(
+            icon: Icon(Icons.close),
             tooltip: 'Closes application',
             onPressed: () {},
           ),

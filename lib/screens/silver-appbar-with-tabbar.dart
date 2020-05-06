@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 
-class SilverAppBarWithTabBarScreen extends StatefulWidget {
+class SilverAppBarWithTabbarScreen extends StatefulWidget {
   @override
   _SilverAppBarWithTabBarState createState() => _SilverAppBarWithTabBarState();
 }
 
-class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
+class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabbarScreen>
     with SingleTickerProviderStateMixin {
   TabController controller;
 
   @override
   void initState() {
     super.initState();
-    controller = new TabController(length: 3, vsync: this);
+    controller = TabController(length: 3, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new CustomScrollView(
+    return Scaffold(
+      body: CustomScrollView(
         slivers: <Widget>[
-          new SliverAppBar(
+          SliverAppBar(
             title: Text("Silver AppBar With ToolBar"),
             pinned: true,
-            expandedHeight: 160.0,
-            bottom: new TabBar(
+            expandedHeight: 160,
+            bottom: TabBar(
               tabs: [
-                new Tab(text: 'Tab 1'),
-                new Tab(text: 'Tab 2'),
-                new Tab(text: 'Tab 3'),
+                Tab(text: 'Tab 1'),
+                Tab(text: 'Tab 2'),
+                Tab(text: 'Tab 3'),
               ],
               controller: controller,
             ),
           ),
-          new SliverFillRemaining(
+          SliverFillRemaining(
             child: TabBarView(
               controller: controller,
               children: <Widget>[

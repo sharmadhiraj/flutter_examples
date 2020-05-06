@@ -8,37 +8,37 @@ class AlertDialogScreen extends StatelessWidget {
       body: Center(
           child: RaisedButton(
               onPressed: () => _showAlert(context),
-              child: Text("Alert Dialog"))),
+              child: Text("Show Alert Dialog"))),
     );
   }
 
   void _showAlert(BuildContext context) {
-    Dialog dialog = new Dialog(
-      child: new Container(
-        width: 260.0,
-        height: 230.0,
-        decoration: new BoxDecoration(
+    Dialog dialog = Dialog(
+      child: Container(
+        width: 260,
+        height: 230,
+        decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           color: Colors.red,
-          borderRadius: new BorderRadius.all(new Radius.circular(32.0)),
+          borderRadius: BorderRadius.all(Radius.circular(32)),
         ),
-        child: new Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             // dialog top
-            new Expanded(
-              child: new Row(
+            Expanded(
+              child: Row(
                 children: <Widget>[
-                  new Container(
-                    // padding: new EdgeInsets.all(10.0),
-                    decoration: new BoxDecoration(
+                  Container(
+                    // padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
                       color: Colors.white,
                     ),
-                    child: new Text(
+                    child: Text(
                       'Rate',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18.0,
+                        fontSize: 18,
                         fontFamily: 'helvetica_neue_light',
                       ),
                       textAlign: TextAlign.center,
@@ -49,18 +49,18 @@ class AlertDialogScreen extends StatelessWidget {
             ),
 
             // dialog centre
-            new Expanded(
-              child: new Container(
-                  child: new TextField(
-                decoration: new InputDecoration(
+            Expanded(
+              child: Container(
+                  child: TextField(
+                decoration: InputDecoration(
                   border: InputBorder.none,
                   filled: false,
-                  contentPadding: new EdgeInsets.only(
-                      left: 10.0, top: 10.0, bottom: 10.0, right: 10.0),
+                  contentPadding: EdgeInsets.only(
+                      left: 10, top: 10, bottom: 10, right: 10),
                   hintText: ' add review',
-                  hintStyle: new TextStyle(
+                  hintStyle: TextStyle(
                     color: Colors.grey.shade500,
-                    fontSize: 12.0,
+                    fontSize: 12,
                     fontFamily: 'helvetica_neue_light',
                   ),
                 ),
@@ -69,17 +69,17 @@ class AlertDialogScreen extends StatelessWidget {
             ),
 
             // dialog bottom
-            new Expanded(
-              child: new Container(
-                padding: new EdgeInsets.all(16.0),
-                decoration: new BoxDecoration(
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
                   color: const Color(0xFF33b17c),
                 ),
-                child: new Text(
+                child: Text(
                   'Rate product',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 18,
                     fontFamily: 'helvetica_neue_light',
                   ),
                   textAlign: TextAlign.center,

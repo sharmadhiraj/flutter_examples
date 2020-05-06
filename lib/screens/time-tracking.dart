@@ -3,35 +3,31 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class TimeTrackHome extends StatefulWidget {
-  TimeTrackHome({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
-  _TimeTrackHomeState createState() => new _TimeTrackHomeState();
+  _TimeTrackHomeState createState() => _TimeTrackHomeState();
 }
 
 class _TimeTrackHomeState extends State<TimeTrackHome> {
   TextEditingController _textController;
-  List<TaskItem> _taskList = new List<TaskItem>();
+  List<TaskItem> _taskList = List<TaskItem>();
 
   void _addTaskDialog() async {
     _textController = TextEditingController();
 
     await showDialog(
         context: context,
-        builder: (_) => new AlertDialog(
-              title: new Text("Add A New Task"),
-              content: new TextField(
+        builder: (_) => AlertDialog(
+              title: Text("Add A Task"),
+              content: TextField(
                 controller: _textController,
                 decoration: InputDecoration(
                     border: InputBorder.none, hintText: 'Enter the task name'),
               ),
               actions: <Widget>[
-                new FlatButton(
+                FlatButton(
                     onPressed: () => Navigator.pop(context),
                     child: const Text("CANCEL")),
-                new FlatButton(
+                FlatButton(
                     onPressed: (() {
                       Navigator.pop(context);
                       _addTask(_textController.text);
@@ -43,7 +39,7 @@ class _TimeTrackHomeState extends State<TimeTrackHome> {
 
   void _addTask(String title) {
     setState(() {
-      // add the new task
+      // add the task
       _taskList.add(TaskItem(
         name: title,
       ));
@@ -59,36 +55,34 @@ class _TimeTrackHomeState extends State<TimeTrackHome> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Time Tracker"),
       ),
-      body: new Align(
+      body: Align(
         alignment: Alignment.topCenter,
         child: ListView.builder(
-            padding: EdgeInsets.all(0.0),
-            itemExtent: 60.0,
+            padding: EdgeInsets.all(0),
+            itemExtent: 60,
             itemCount: _taskList.length,
             itemBuilder: (BuildContext context, int index) {
-              if (index < _taskList.length) {
-                return GestureDetector(
-                  key: ObjectKey(_taskList[index]),
-                  onHorizontalDragEnd: (dragType) {
-                    if (this.mounted) {
-                      setState(() {
-                        _taskList.removeAt(index);
-                      });
-                    }
-                  },
-                  child: _taskList[index],
-                );
-              }
+              return GestureDetector(
+                key: ObjectKey(_taskList[index]),
+                onHorizontalDragEnd: (dragType) {
+                  if (this.mounted) {
+                    setState(() {
+                      _taskList.removeAt(index);
+                    });
+                  }
+                },
+                child: _taskList[index],
+              );
             }),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _addTaskDialog,
-        tooltip: 'Click to add a new task',
-        child: new Icon(Icons.add),
+        tooltip: 'Click to add a task',
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -105,12 +99,12 @@ class TaskItem extends StatefulWidget {
         startTime = other.startTime;
 
   @override
-  State<StatefulWidget> createState() => new _TaskState();
+  State<StatefulWidget> createState() => _TaskState();
 }
 
 class _TaskState extends State<TaskItem> {
   static final _taskFont =
-      const TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold);
+      const TextStyle(fontSize: 26, fontWeight: FontWeight.bold);
   static _TaskState previousTask;
   Color _color = Colors.transparent;
   String _taskLabel;
@@ -178,7 +172,7 @@ class _TaskState extends State<TaskItem> {
         ),
       ),
       Divider(
-        height: 0.0,
+        height: 0,
       ),
     ]);
   }
