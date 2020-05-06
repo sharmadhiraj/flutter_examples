@@ -124,7 +124,7 @@ class ListScreen extends StatelessWidget {
       ),
       Screen(
         "SnackBar Dialog",
-        "Show SnackBar on buton press",
+        "Show SnackBar on button press",
         SnackBarScreen(),
       ),
       Screen(

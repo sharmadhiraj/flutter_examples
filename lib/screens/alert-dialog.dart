@@ -55,8 +55,8 @@ class AlertDialogScreen extends StatelessWidget {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   filled: false,
-                  contentPadding: EdgeInsets.only(
-                      left: 10, top: 10, bottom: 10, right: 10),
+                  contentPadding:
+                      EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
                   hintText: ' add review',
                   hintStyle: TextStyle(
                     color: Colors.grey.shade500,
