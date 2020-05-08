@@ -2,26 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class FirstScreen extends StatefulWidget {
-  final String title;
-
-  FirstScreen(this.title);
-
   @override
-  _FirstScreenState createState() => _FirstScreenState(title);
+  _FirstScreenState createState() => _FirstScreenState();
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  final String title;
   String message = "Hello";
-
-  _FirstScreenState(this.title);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text("Reload State On Resume")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

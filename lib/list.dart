@@ -11,6 +11,7 @@ import 'screens/fab.dart';
 import 'screens/grid-view.dart';
 import 'screens/list-detail-example.dart';
 import 'screens/location.dart';
+import 'screens/multiple_network_requests.dart';
 import 'screens/network-example.dart';
 import 'screens/posts.dart';
 import 'screens/pull_to_refresh.dart';
@@ -155,7 +156,12 @@ class ListScreen extends StatelessWidget {
       Screen(
         "Reload State On Resume",
         "Event on first screen when user navigates back to first screen from second screen.",
-        FirstScreen("Reload State On Resume"),
+        FirstScreen(),
+      ),
+      Screen(
+        "Multiple Network Request",
+        "Combining multiple network request in Flutter to single Future and FutureBuilder.",
+        NewsDashboard(),
       ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
