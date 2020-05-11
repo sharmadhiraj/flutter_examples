@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examples/screens/dynamic_key_josn.dart';
 import 'package:flutter_examples/screens/splash.dart';
 
 import 'model/screen.dart';
@@ -162,6 +163,11 @@ class ListScreen extends StatelessWidget {
         "Splash Screen",
         "Example of Splash Screen",
         SplashScreen(),
+      ),
+      Screen(
+        "Dynamic Key Json",
+        "Parse Json data with dynamic keys",
+        DynamicKeyJsonExampleScreen(),
       ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
