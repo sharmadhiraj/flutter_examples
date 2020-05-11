@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examples/screens/splash.dart';
 
 import 'model/screen.dart';
 import 'screens/alert-dialog.dart';
@@ -19,7 +20,6 @@ import 'screens/reload_state_on_resume.dart';
 import 'screens/silver-appbar-with-tabbar.dart';
 import 'screens/snackbar-dialog.dart';
 import 'screens/stack-of-cards.dart';
-import 'screens/time-tracking.dart';
 import 'screens/weather.dart';
 import 'screens/webview-example.dart';
 import 'screens/webview_back.dart';
@@ -119,11 +119,6 @@ class ListScreen extends StatelessWidget {
         ExpansionTilesExample(),
       ),
       Screen(
-        "Time Tracker",
-        "Time tracking application example",
-        TimeTrackHome(),
-      ),
-      Screen(
         "SnackBar Dialog",
         "Show SnackBar on button press",
         SnackBarScreen(),
@@ -162,6 +157,11 @@ class ListScreen extends StatelessWidget {
         "Multiple Network Request",
         "Combining multiple network request in Flutter to single Future and FutureBuilder.",
         NewsDashboard(),
+      ),
+      Screen(
+        "Splash Screen",
+        "Example of Splash Screen",
+        SplashScreen(),
       ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
