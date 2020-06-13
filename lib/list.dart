@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examples/screens/color_utils.dart';
+import 'package:flutter_examples/screens/custom_appbar_theme.dart';
 import 'package:flutter_examples/screens/dynamic_key_josn.dart';
 import 'package:flutter_examples/screens/splash.dart';
 
@@ -168,6 +170,16 @@ class ListScreen extends StatelessWidget {
         "Dynamic Key Json",
         "Parse Json data with dynamic keys",
         DynamicKeyJsonExampleScreen(),
+      ),
+      Screen(
+        "Color Utils",
+        "Color utility methods like create color from hex code, convert color to material color, convert color to theme. This can be useful to create theme for app with single color or hex code.",
+        ColorUtilsScreen(),
+      ),
+      Screen(
+        "Custom AppBar Theme",
+        "AppBar with custom theme color. This can be useful to create different screen with different theme.",
+        CustomAppBarThemeExample(),
       ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
