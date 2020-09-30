@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/screens/color_utils.dart';
 import 'package:flutter_examples/screens/custom_appbar_theme.dart';
 import 'package:flutter_examples/screens/dynamic_key_josn.dart';
+import 'package:flutter_examples/screens/save_custom_object.dart';
 import 'package:flutter_examples/screens/splash.dart';
 
 import 'model/screen.dart';
@@ -181,6 +182,11 @@ class ListScreen extends StatelessWidget {
         "AppBar with custom theme color. This can be useful to create different screen with different theme.",
         CustomAppBarThemeExample(),
       ),
+    Screen(
+    "Save Custom Object",
+    "Save Custom Object to Shared Preferences.",
+    SaveCustomObjectExampleScreen(),
+    ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
     return screens;

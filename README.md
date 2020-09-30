@@ -26,3 +26,4 @@
 - <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dynamic_key_json.dart" target="_blank">**Dynamic Key Json** (Parse Json data with dynamic keys)</a></a>
 - <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/color_utils.dart" target="_blank">**Color Utils** (Color utility methods like create color from hex code, convert color to material color, convert color to theme. This can be useful to create theme for app with single color or hex code.)</a></a>
 - <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/custom_appbar_theme.dart" target="_blank">**Custom AppBar Theme** (AppBar with custom theme color. This can be useful to create different screen with different theme.)</a></a>
+- <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/save_custom_object.dart" target="_blank">**Save Custom Object** (Save Custom Object to Shared Preferences.)</a></a>
