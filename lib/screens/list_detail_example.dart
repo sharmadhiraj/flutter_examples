@@ -26,9 +26,7 @@ class ListExampleScreen extends StatelessWidget {
                         child: Text(item),
                       ),
                     ),
-                    onTap: () {
-                      navigate(context, DetailScreen(item));
-                    },
+                    onTap: () => navigate(context, DetailScreen(item)),
                   ))
               .toList()),
     );
@@ -43,9 +41,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text(title)),
     );
   }
 }

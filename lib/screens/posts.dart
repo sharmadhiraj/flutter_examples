@@ -64,9 +64,7 @@ class NetworkCallState extends State<NetworkCall> {
             Container(
               child: RaisedButton(
                 child: Text('Call'),
-                onPressed: () {
-                  _fetchPost();
-                },
+                onPressed: () => _fetchPost(),
               ),
             ),
             Container(

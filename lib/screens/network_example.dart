@@ -53,11 +53,8 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
                               ),
                             ),
                             RaisedButton(
-                              onPressed: () {
-                                setState(() {
-                                  _futureItem = getItem();
-                                });
-                              },
+                              onPressed: () =>
+                                  setState(() => _futureItem = getItem()),
                               child: Text("Another"),
                             )
                           ],
@@ -67,9 +64,7 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
                             padding: const EdgeInsets.all(32),
                             child: Text("ERROR OCCURRED, Tap to retry !"),
                           ),
-                          onTap: () => setState(() {
-                                _futureItem = getItem();
-                              }))
+                          onTap: () => setState(() => _futureItem = getItem()))
                   : CircularProgressIndicator();
             },
           ),

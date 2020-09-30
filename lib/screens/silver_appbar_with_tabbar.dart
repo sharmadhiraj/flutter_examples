@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SilverAppBarWithTabbarScreen extends StatefulWidget {
+class SilverAppBarWithTabBarScreen extends StatefulWidget {
   @override
   _SilverAppBarWithTabBarState createState() => _SilverAppBarWithTabBarState();
 }
 
-class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabbarScreen>
+class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
     with SingleTickerProviderStateMixin {
   TabController controller;
 

@@ -4,9 +4,8 @@ import 'package:geocoder/geocoder.dart';
 
 Future latLngToAddress() async {
   final coordinates = Coordinates(1.10, 45.50);
-  var addresses =
+  final addresses =
       await Geocoder.local.findAddressesFromCoordinates(coordinates);
-
-  var first = addresses.first;
+  final first = addresses.first;
   print("${first.featureName} : ${first.addressLine}");
 }

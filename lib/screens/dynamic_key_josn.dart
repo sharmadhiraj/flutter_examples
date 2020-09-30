@@ -68,12 +68,12 @@ class DynamicKeyJsonExampleScreen extends StatelessWidget {
       body: ListView(
         children: User.parseList(json.decode(jsonData))
             .map((i) => Card(
-              child: ListTile(
+                  child: ListTile(
                     title: Text(i.name),
                     subtitle: Text(i.email),
                     leading: CircleAvatar(child: Text(i.id)),
                   ),
-            ))
+                ))
             .toList(),
       ),
     );

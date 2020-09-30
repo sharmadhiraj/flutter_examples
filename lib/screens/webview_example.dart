@@ -14,9 +14,7 @@ class WebViewScreen extends StatelessWidget {
           Container(
             child: RaisedButton(
               child: Text("Open In Browser"),
-              onPressed: () {
-                launch(url);
-              },
+              onPressed: () => launch(url),
             ),
             margin: EdgeInsets.only(right: 10),
           )

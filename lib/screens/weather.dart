@@ -23,18 +23,23 @@ class WeatherScreen extends StatelessWidget {
                   List<Post> posts = snapshot.data;
                   return Column(
                       children: posts
-                          .map((post) => Column(
-                                children: <Widget>[
-                                  Card(
-                                      child: Padding(
+                          .map((post) =>
+                          Column(
+                            children: <Widget>[
+                              Card(
+                                  child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Text(post.temperature),
                                   )),
-                                ],
-                              ))
+                            ],
+                          ))
                           .toList());
                 } else if (snapshot.hasError) {
-                  return snapshot.error;
+                  return Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Text(snapshot.error.toString()),
+                      ));
                 }
                 return Center(
                   child: Column(

@@ -5,27 +5,27 @@ import 'package:flutter_examples/screens/dynamic_key_josn.dart';
 import 'package:flutter_examples/screens/splash.dart';
 
 import 'model/screen.dart';
-import 'screens/alert-dialog.dart';
-import 'screens/app-bar-with-text-menu.dart';
-import 'screens/bottom-nav-icon-size.dart';
+import 'screens/alert_dialog.dart';
+import 'screens/app_bar_with_text_menu.dart';
+import 'screens/bottom_nav_icon_size.dart';
 import 'screens/dialog.dart';
 import 'screens/dropdown-button-navigation.dart';
 import 'screens/expansion-tiles.dart';
 import 'screens/fab.dart';
-import 'screens/grid-view.dart';
-import 'screens/list-detail-example.dart';
+import 'screens/grid_view.dart';
+import 'screens/list_detail_example.dart';
 import 'screens/location.dart';
 import 'screens/multiple_network_requests.dart';
-import 'screens/network-example.dart';
+import 'screens/network_example.dart';
 import 'screens/posts.dart';
 import 'screens/pull_to_refresh.dart';
 import 'screens/reload_state_on_resume.dart';
-import 'screens/silver-appbar-with-tabbar.dart';
-import 'screens/snackbar-dialog.dart';
-import 'screens/stack-of-cards.dart';
+import 'screens/silver_appbar_with_tabbar.dart';
+import 'screens/snackbar_dialog.dart';
+import 'screens/stack_of_cards.dart';
 import 'screens/weather.dart';
-import 'screens/webview-example.dart';
 import 'screens/webview_back.dart';
+import 'screens/webview_example.dart';
 import 'util/data.dart';
 import 'util/method.dart';
 
@@ -59,7 +59,7 @@ class ListScreen extends StatelessWidget {
       Screen(
         "Silver AppBar With Tabbar",
         "Working example of Silver AppBar with Tabbar",
-        SilverAppBarWithTabbarScreen(),
+        SilverAppBarWithTabBarScreen(),
       ),
       Screen(
         "Bottom Nav Icon Size",

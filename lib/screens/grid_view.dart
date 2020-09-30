@@ -19,24 +19,21 @@ class GridViewScreen extends StatelessWidget {
           padding: const EdgeInsets.all(4),
           children: images.map((String url) {
             return GridTile(
-                child: Card(
-              child: Image.network(url, fit: BoxFit.cover),
-            ));
+              child: Card(
+                child: Image.network(url, fit: BoxFit.cover),
+              ),
+            );
           }).toList()),
     );
 
     Widget body = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        gridSection,
-      ],
+      children: <Widget>[gridSection],
     );
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Grid Example"),
-      ),
+      appBar: AppBar(title: Text("Grid Example")),
       body: body,
     );
   }

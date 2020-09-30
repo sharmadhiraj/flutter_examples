@@ -5,24 +5,23 @@ class BottomNavIconSize extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Bottom Nav Icon Size")),
-      body: Center(
-        child: Text(""),
-      ),
+      body: Center(child: Text("Bottom Nav Icon Size")),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         iconSize: 24,
+        selectedFontSize: 22,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              title: Text(
-                'Cloud',
-                style: TextStyle(fontSize: 22),
-              ),
-              icon: Icon(
-                Icons.cloud,
-                color: Colors.red,
-              )),
+            label: 'Cloud',
+            icon: Icon(
+              Icons.cloud,
+              color: Colors.red,
+            ),
+          ),
           BottomNavigationBarItem(
-              title: Text('Cloud'), icon: Icon(Icons.cloud)),
+            label: 'Cloud',
+            icon: Icon(Icons.cloud),
+          ),
         ],
       ),
     );

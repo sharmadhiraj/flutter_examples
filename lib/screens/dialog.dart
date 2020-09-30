@@ -5,10 +5,11 @@ class DialogExampleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var bodyProgress = Container(
       decoration: BoxDecoration(
-          color: Colors.blue[200], borderRadius: BorderRadius.circular(2)),
+        color: Colors.blue[200],
+        borderRadius: BorderRadius.circular(2),
+      ),
       width: 300,
       height: 200,
-//color: Colors.blue,
       alignment: AlignmentDirectional.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

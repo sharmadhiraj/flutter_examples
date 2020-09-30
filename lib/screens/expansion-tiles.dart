@@ -13,9 +13,9 @@ class ExpansionTilesExample extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          return StuffInTiles(listofTiles[index]);
+          return StuffInTiles(listOfTiles[index]);
         },
-        itemCount: listofTiles.length,
+        itemCount: listOfTiles.length,
       ),
     );
   }
@@ -48,7 +48,7 @@ class MyTile {
   MyTile(this.title, [this.children = const <MyTile>[]]);
 }
 
-List<MyTile> listofTiles = <MyTile>[
+List<MyTile> listOfTiles = <MyTile>[
   MyTile('Animals', <MyTile>[
     MyTile('Dogs', <MyTile>[MyTile('dog one '), MyTile('dog two')])
   ])

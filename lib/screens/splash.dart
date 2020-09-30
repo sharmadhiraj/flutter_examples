@@ -14,11 +14,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: splashPageVisibilityTime),
-        () => Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            ));
+      Duration(seconds: splashPageVisibilityTime),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      ),
+    );
   }
 
   @override
@@ -41,12 +42,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
-      ),
-      body: Center(
-        child: Text("Flutter Examples"),
-      ),
+      appBar: AppBar(title: Text("Home")),
+      body: Center(child: Text("Flutter Examples")),
     );
   }
 }

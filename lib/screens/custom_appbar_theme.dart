@@ -13,10 +13,7 @@ class CustomAppBarThemeExample extends StatelessWidget {
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  CustomAppBar()
-      : appBar = AppBar(
-          title: Text("Custom AppBar Theme"),
-        );
+  CustomAppBar() : appBar = AppBar(title: Text("Custom AppBar Theme"));
 
   @override
   Widget build(BuildContext context) {

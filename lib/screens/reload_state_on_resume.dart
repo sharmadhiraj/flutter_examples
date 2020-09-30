@@ -25,16 +25,11 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ),
             RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondScreen()),
-                ).then((value) {
-                  setState(() {
-                    message = DateTime.now().toIso8601String();
-                  });
-                });
-              },
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondScreen()),
+              ).then((value) =>
+                  setState(() => message = DateTime.now().toIso8601String())),
               child: Text("Go To Next Screen"),
             )
           ],
@@ -48,9 +43,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Screen"),
-      ),
+      appBar: AppBar(title: Text("Second Screen")),
       body: Center(
         child: RaisedButton(
           onPressed: () => Navigator.pop(context),

@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_examples/util/data.dart';
+
+class AlertDialogScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Alert Dialog")),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () => _showAlert(context),
+          child: Text("Show Alert Dialog"),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _showAlert(BuildContext context) async {
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.white,
+        title: Text(APP_NAME),
+        content: Text("Example of simple alert dialog"),
+        actions: [
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+}
