@@ -61,7 +61,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   }
 
   Future<User> getUser() async {
-    final response = await http.get("https://randomuser.me/api/");
+    final response = await http.get(Uri.parse("https://randomuser.me/api/"));
     final responseJson = json.decode(response.body);
     return User.fromJson(responseJson);
   }

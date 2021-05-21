@@ -10,8 +10,8 @@ class LocationScreen extends StatelessWidget {
       ),
       body: Center(
         child: FutureBuilder<Position>(
-          future: Geolocator()
-              .getCurrentPosition(desiredAccuracy: LocationAccuracy.high),
+          future: Geolocator.getCurrentPosition(
+              desiredAccuracy: LocationAccuracy.high),
           builder: (BuildContext context, AsyncSnapshot<Position> snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.none:

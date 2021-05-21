@@ -182,11 +182,11 @@ class ListScreen extends StatelessWidget {
         "AppBar with custom theme color. This can be useful to create different screen with different theme.",
         CustomAppBarThemeExample(),
       ),
-    Screen(
-    "Save Custom Object",
-    "Save Custom Object to Shared Preferences.",
-    SaveCustomObjectExampleScreen(),
-    ),
+      Screen(
+        "Save Custom Object",
+        "Save Custom Object to Shared Preferences.",
+        SaveCustomObjectExampleScreen(),
+      ),
     ];
     screens.sort((a, b) => a.title.compareTo(b.title));
     return screens;

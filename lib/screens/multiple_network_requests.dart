@@ -126,14 +126,14 @@ class _NewsDashboardState extends State<NewsDashboard> {
   Future<List<News>> getTopHeadlines() async {
     final String url =
         "https://newsapi.org/v2/top-headlines?category=technology&apiKey=$apiKey";
-    final response = await http.get(url);
+    final response = await http.get(Uri.parse(url));
     return News.parseBody(json.decode(response.body));
   }
 
   Future<List<News>> getEverything() async {
     final String url =
         "https://newsapi.org/v2/everything?q=technology&apiKey=$apiKey";
-    final response = await http.get(url);
+    final response = await http.get(Uri.parse(url));
     return News.parseBody(json.decode(response.body));
   }
 }

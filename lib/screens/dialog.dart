@@ -45,11 +45,12 @@ class DialogExampleScreen extends StatelessWidget {
           child: Text("Show"),
           onPressed: () {
             showDialog(
-                context: context,
-                child: AlertDialog(
-                  contentPadding: EdgeInsets.all(0),
-                  content: bodyProgress,
-                ));
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                contentPadding: EdgeInsets.all(0),
+                content: bodyProgress,
+              ),
+            );
           },
         ),
       ),

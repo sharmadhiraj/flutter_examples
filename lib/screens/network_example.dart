@@ -14,8 +14,8 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
   Future<Item> _futureItem;
 
   Future<Item> getItem() async {
-    final response = await http.get(
-        "https://jsonplaceholder.typicode.com/photos/${Random().nextInt(5000)}");
+    final response = await http.get(Uri.parse(
+        "https://jsonplaceholder.typicode.com/photos/${Random().nextInt(5000)}"));
     final responseJson = json.decode(response.body);
     return Item.fromJson(responseJson);
   }

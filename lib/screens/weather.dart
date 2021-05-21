@@ -23,23 +23,22 @@ class WeatherScreen extends StatelessWidget {
                   List<Post> posts = snapshot.data;
                   return Column(
                       children: posts
-                          .map((post) =>
-                          Column(
-                            children: <Widget>[
-                              Card(
-                                  child: Padding(
+                          .map((post) => Column(
+                                children: <Widget>[
+                                  Card(
+                                      child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Text(post.temperature),
                                   )),
-                            ],
-                          ))
+                                ],
+                              ))
                           .toList());
                 } else if (snapshot.hasError) {
                   return Center(
                       child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Text(snapshot.error.toString()),
-                      ));
+                    padding: const EdgeInsets.all(16),
+                    child: Text(snapshot.error.toString()),
+                  ));
                 }
                 return Center(
                   child: Column(
@@ -59,8 +58,8 @@ class WeatherScreen extends StatelessWidget {
 }
 
 Future<List<Post>> fetchPosts() async {
-  http.Response response = await http.get(
-      'http://ws1.metcheck.com/ENGINE/v9_0/json.asp?lat=28&lon=-15.6&lid=62228&Fc=No');
+  http.Response response = await http.get(Uri.parse(
+      'http://ws1.metcheck.com/ENGINE/v9_0/json.asp?lat=28&lon=-15.6&lid=62228&Fc=No'));
   var responseJson = json.decode(response.body);
   return (responseJson['metcheckData']['forecastLocation']['forecast'] as List)
       .map((p) => Post.fromJson(p))
