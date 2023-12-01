@@ -11,19 +11,12 @@ class NetworkExampleScreen extends StatefulWidget {
 }
 
 class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
-  Future<Item> _futureItem;
-
-  Future<Item> getItem() async {
-    final response = await http.get(Uri.parse(
-        "https://jsonplaceholder.typicode.com/photos/${Random().nextInt(5000)}"));
-    final responseJson = json.decode(response.body);
-    return Item.fromJson(responseJson);
-  }
+  late Future<Item> _futureItem;
 
   @override
   void initState() {
     super.initState();
-    _futureItem = getItem();
+    _futureItem = _getItem();
   }
 
   @override
@@ -36,25 +29,25 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
             future: _futureItem,
             builder: (BuildContext context, AsyncSnapshot<Item> snapshot) {
               return snapshot.connectionState == ConnectionState.done
-                  ? snapshot.hasData
+                  ? snapshot.hasData && snapshot.data != null
                       ? Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Image.network(
-                              snapshot.data.image,
+                              snapshot.data!.image,
                               width: 160,
                               height: 160,
                             ),
                             Padding(
                               padding: const EdgeInsets.all(24),
                               child: Text(
-                                snapshot.data.title,
+                                snapshot.data!.title,
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
-                            RaisedButton(
+                  ElevatedButton(
                               onPressed: () =>
-                                  setState(() => _futureItem = getItem()),
+                                  setState(() => _futureItem = _getItem()),
                               child: Text("Another"),
                             )
                           ],
@@ -64,13 +57,21 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
                             padding: const EdgeInsets.all(32),
                             child: Text("ERROR OCCURRED, Tap to retry !"),
                           ),
-                          onTap: () => setState(() => _futureItem = getItem()))
+                          onTap: () => setState(() => _futureItem = _getItem()),
+                        )
                   : CircularProgressIndicator();
             },
           ),
         ),
       ),
     );
+  }
+
+  Future<Item> _getItem() async {
+    final response = await http.get(Uri.parse(
+        "https://jsonplaceholder.typicode.com/photos/${Random().nextInt(5000)}"));
+    final responseJson = json.decode(response.body);
+    return Item.fromJson(responseJson);
   }
 }
 

@@ -13,7 +13,7 @@ class SaveCustomObjectExampleScreen extends StatefulWidget {
 
 class _SaveCustomObjectExampleScreenState
     extends State<SaveCustomObjectExampleScreen> {
-  User _user;
+  User? _user;
 
   @override
   void initState() {
@@ -30,19 +30,25 @@ class _SaveCustomObjectExampleScreenState
         children: [
           _buildUser(),
           _user == null
-              ? RaisedButton(
+              ? ElevatedButton(
                   onPressed: () {
                     _saveUser();
-                    navigate(context, SaveCustomObjectExampleScreen(),
-                        finish: true);
+                    navigate(
+                      context,
+                      SaveCustomObjectExampleScreen(),
+                      finish: true,
+                    );
                   },
                   child: Text("Save User"),
                 )
-              : RaisedButton(
+              : ElevatedButton(
                   onPressed: () {
                     _deleteUser();
-                    navigate(context, SaveCustomObjectExampleScreen(),
-                        finish: true);
+                    navigate(
+                      context,
+                      SaveCustomObjectExampleScreen(),
+                      finish: true,
+                    );
                   },
                   child: Text("Delete User"),
                 )
@@ -54,24 +60,25 @@ class _SaveCustomObjectExampleScreenState
   Widget _buildUser() {
     if (_user == null) {
       return Center(
-          child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Text("No user saved"),
-      ));
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text("No user saved"),
+        ),
+      );
     } else {
       return Column(
         children: [
           ListTile(
             title: Text("Name"),
-            subtitle: Text(_user.name),
+            subtitle: Text(_user!.name),
           ),
           ListTile(
             title: Text("Email"),
-            subtitle: Text(_user.email),
+            subtitle: Text(_user!.email),
           ),
           ListTile(
             title: Text("Address"),
-            subtitle: Text(_user.address),
+            subtitle: Text(_user!.address),
           ),
         ],
       );
@@ -84,10 +91,10 @@ class _SaveCustomObjectExampleScreenState
     await prefs.setString('user', json.encode(user.toJson()));
   }
 
-  Future<User> _getUser() async {
+  Future<User?> _getUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.containsKey("user")) {
-      return User.fromJson(json.decode(prefs.getString("user")));
+      return User.fromJson(json.decode(prefs.getString("user")!));
     }
     return null;
   }

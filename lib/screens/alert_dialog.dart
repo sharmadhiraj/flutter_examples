@@ -7,7 +7,7 @@ class AlertDialogScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Alert Dialog")),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () => _showAlert(context),
           child: Text("Show Alert Dialog"),
         ),
@@ -23,7 +23,7 @@ class AlertDialogScreen extends StatelessWidget {
         title: Text(APP_NAME),
         content: Text("Example of simple alert dialog"),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.of(context).pop(),
             child: const Text('OK'),
           ),

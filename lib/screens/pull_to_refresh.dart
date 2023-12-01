@@ -23,7 +23,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   void initState() {
     super.initState();
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => _refreshIndicatorKey.currentState.show());
+        .addPostFrameCallback((_) => _refreshIndicatorKey.currentState?.show());
   }
 
   @override
@@ -36,7 +36,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
               icon: const Icon(Icons.refresh),
               tooltip: 'Refresh',
               onPressed: () {
-                _refreshIndicatorKey.currentState.show();
+                _refreshIndicatorKey.currentState?.show();
               }),
         ],
       ),

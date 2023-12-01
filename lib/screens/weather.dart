@@ -20,7 +20,7 @@ class WeatherScreen extends StatelessWidget {
               future: fetchPosts(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  List<Post> posts = snapshot.data;
+                  List<Post> posts = snapshot.data ?? [];
                   return Column(
                       children: posts
                           .map((post) => Column(
@@ -70,12 +70,12 @@ class Post {
   final String temperature, rain, humidity, sunrise, sunset, updateDate;
 
   Post({
-    this.temperature,
-    this.rain,
-    this.humidity,
-    this.sunrise,
-    this.sunset,
-    this.updateDate,
+    required this.temperature,
+    required this.rain,
+    required this.humidity,
+    required this.sunrise,
+    required this.sunset,
+    required this.updateDate,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {

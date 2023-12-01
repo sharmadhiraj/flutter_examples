@@ -8,7 +8,7 @@ class DropDownButtonScreen extends StatefulWidget {
 }
 
 class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
-  String defaultValue;
+  String? defaultValue;
 
   @override
   void initState() {
@@ -21,9 +21,9 @@ class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
     return Scaffold(
       appBar: AppBar(
         title: DropdownButtonHideUnderline(
-          child: DropdownButton(
+          child: DropdownButton<String>(
             value: defaultValue,
-            items: <DropdownMenuItem>[
+            items: <DropdownMenuItem<String>>[
               DropdownMenuItem(
                 value: "MEN",
                 child: Text('MEN'),

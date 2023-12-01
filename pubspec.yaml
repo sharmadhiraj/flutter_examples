@@ -3,22 +3,23 @@ description: Random flutter examples.
 version: 1.0.0
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  geocoder: ^0.2.1
-  flutter_webview_plugin: ^0.3.11
-  geolocator: ^7.0.3
-  http: ^0.13.3
-  url_launcher: ^6.0.4
-  shared_preferences: ^2.0.5
+
+  flutter_webview_plugin: ^0.4.0
+  geolocator: ^10.1.0
+  http: ^1.1.2
+  url_launcher: ^6.2.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 flutter:
   uses-material-design: true

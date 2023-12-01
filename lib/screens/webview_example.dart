@@ -12,9 +12,9 @@ class WebViewScreen extends StatelessWidget {
       appBar: AppBar(
         actions: <Widget>[
           Container(
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Text("Open In Browser"),
-              onPressed: () => launch(url),
+              onPressed: () => launchUrl(Uri.parse(url)),
             ),
             margin: EdgeInsets.only(right: 10),
           )

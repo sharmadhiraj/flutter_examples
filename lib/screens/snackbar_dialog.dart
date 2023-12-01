@@ -7,10 +7,12 @@ class SnackBarScreen extends StatelessWidget {
       appBar: AppBar(title: Text("SnackBar Example")),
       body: Center(
         child: Builder(builder: (BuildContext context) {
-          return RaisedButton(
-            onPressed: () => Scaffold.of(context).showSnackBar(SnackBar(
-              content: Text("Hello there"),
-            )),
+          return ElevatedButton(
+            onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Hello there"),
+              ),
+            ),
             child: Text('Show'),
           );
         }),

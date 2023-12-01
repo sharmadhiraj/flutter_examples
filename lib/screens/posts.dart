@@ -21,7 +21,12 @@ class Post {
   final String title;
   final String body;
 
-  Post({this.userId, this.id, this.title, this.body});
+  Post({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.body,
+  });
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
@@ -43,14 +48,7 @@ class NetworkCall extends StatefulWidget {
 }
 
 class NetworkCallState extends State<NetworkCall> {
-  void _fetchPost() {
-    fetchPost().then((post) {
-      _post = post;
-      setState(() {});
-    });
-  }
-
-  Post _post;
+  Post? _post;
 
   @override
   Widget build(BuildContext context) {
@@ -62,17 +60,25 @@ class NetworkCallState extends State<NetworkCall> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text('Call'),
                 onPressed: () => _fetchPost(),
               ),
             ),
             Container(
-                padding: const EdgeInsets.all(16),
-                child: _post == null ? null : Text(_post.title))
+              padding: const EdgeInsets.all(16),
+              child: _post == null ? null : Text(_post!.title),
+            )
           ],
         ),
       ),
     );
+  }
+
+  void _fetchPost() {
+    fetchPost().then((post) {
+      _post = post;
+      setState(() {});
+    });
   }
 }

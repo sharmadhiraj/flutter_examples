@@ -10,7 +10,7 @@ class NewsDashboard extends StatefulWidget {
 
 class _NewsDashboardState extends State<NewsDashboard> {
   final String apiKey = "aa67d8d98c8e4ad1b4f16dbd5f3be348";
-  Future<List<List<News>>> _futureNews;
+  late Future<List<List<News>>> _futureNews;
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _NewsDashboardState extends State<NewsDashboard> {
         builder:
             (BuildContext context, AsyncSnapshot<List<List<News>>> snapshot) {
           return snapshot.connectionState == ConnectionState.done
-              ? snapshot.hasData
+              ? snapshot.hasData && snapshot.data != null
                   ? ListView(
                       scrollDirection: Axis.vertical,
                       children: [
@@ -38,32 +38,38 @@ class _NewsDashboardState extends State<NewsDashboard> {
                           child: Text(
                             "Top Headlines",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                         Container(
                           height: 160,
                           child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data[0]
-                                  .map((i) => getNewsListItem(i))
-                                  .toList()),
+                            scrollDirection: Axis.horizontal,
+                            children: snapshot.data![0]
+                                .map((i) => getNewsListItem(i))
+                                .toList(),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(16),
                           child: Text(
                             "Everything",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                         Container(
                           height: 160,
                           child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data[1]
-                                  .map((i) => getNewsListItem(i))
-                                  .toList()),
+                            scrollDirection: Axis.horizontal,
+                            children: snapshot.data![1]
+                                .map((i) => getNewsListItem(i))
+                                .toList(),
+                          ),
                         ),
                       ],
                     )
@@ -74,7 +80,8 @@ class _NewsDashboardState extends State<NewsDashboard> {
                           child: Text("Something went wrong, Tap to retry !"),
                         ),
                       ),
-                      onTap: () => setState(() => _futureNews = getNews()))
+                      onTap: () => setState(() => _futureNews = getNews()),
+                    )
               : Center(child: CircularProgressIndicator());
         },
       ),
@@ -105,7 +112,9 @@ class _NewsDashboardState extends State<NewsDashboard> {
                     news.title,
                     maxLines: 2,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

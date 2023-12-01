@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/screens/color_utils.dart';
 import 'package:flutter_examples/screens/custom_appbar_theme.dart';
-import 'package:flutter_examples/screens/dynamic_key_josn.dart';
+import 'package:flutter_examples/screens/dynamic_key_json.dart';
 import 'package:flutter_examples/screens/save_custom_object.dart';
 import 'package:flutter_examples/screens/splash.dart';
 
@@ -10,7 +10,7 @@ import 'screens/alert_dialog.dart';
 import 'screens/app_bar_with_text_menu.dart';
 import 'screens/bottom_nav_icon_size.dart';
 import 'screens/dialog.dart';
-import 'screens/dropdown-button-navigation.dart';
+import 'screens/dropdown_button_navigation.dart';
 import 'screens/expansion-tiles.dart';
 import 'screens/fab.dart';
 import 'screens/grid_view.dart';

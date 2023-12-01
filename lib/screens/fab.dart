@@ -6,17 +6,21 @@ class FabExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Floating Action Button Example")),
       body: Center(child: Text("Floating Action Button Example")),
-      floatingActionButton: Builder(builder: (BuildContext context) {
-        return FloatingActionButton(
+      floatingActionButton: Builder(
+        builder: (BuildContext context) {
+          return FloatingActionButton(
             child: Container(
               alignment: Alignment.center,
               child: Icon(Icons.adb),
             ),
             onPressed: () {
-              Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text('Hello Floating Action Button!')));
-            });
-      }),
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Hello Floating Action Button!')),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

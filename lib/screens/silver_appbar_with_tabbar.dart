@@ -7,7 +7,7 @@ class SilverAppBarWithTabBarScreen extends StatefulWidget {
 
 class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
     with SingleTickerProviderStateMixin {
-  TabController controller;
+  late TabController controller;
 
   @override
   void initState() {

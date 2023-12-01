@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -24,7 +23,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SecondScreen()),
@@ -45,7 +44,7 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Second Screen")),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: Text("Go Back"),
         ),

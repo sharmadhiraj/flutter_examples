@@ -41,7 +41,7 @@ class DialogExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Dialog")),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text("Show"),
           onPressed: () {
             showDialog(

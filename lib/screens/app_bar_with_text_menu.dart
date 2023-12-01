@@ -11,7 +11,7 @@ class AppBarWithTextMenuScreen extends StatelessWidget {
           Center(
             child: Text(
               "User name",
-              textScaleFactor: 1.5,
+              textScaler: TextScaler.linear(1.5),
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.white,

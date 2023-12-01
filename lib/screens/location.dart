@@ -20,12 +20,13 @@ class LocationScreen extends StatelessWidget {
               case ConnectionState.waiting:
                 return Text("Fetching Location");
               case ConnectionState.done:
-                Position location = snapshot.data;
-                return Text(snapshot.hasData
-                    ? "Location: ${location.latitude},${location.longitude}"
-                    : "Error");
+                Position? location = snapshot.data;
+                return Text(
+                  snapshot.hasData && location != null
+                      ? "Location: ${location.latitude},${location.longitude}"
+                      : "Error",
+                );
             }
-            return Text("");
           },
         ),
       ),
