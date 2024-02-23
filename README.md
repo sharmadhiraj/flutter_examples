@@ -1,5 +1,4 @@
-[**Network Call Example
-** - Demonstrating a simple network call with progress, error handling, retry, and reload](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/network_example.dart)
+[Network Call Example - Demonstrating a simple network call with progress, error handling, retry, and reload](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/network_example.dart)
 
 [Dialog Example - Illustrating a custom dialog triggered by button click](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dialog.dart)
 
