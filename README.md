@@ -1,61 +1,74 @@
-# Flutter Examples
+[**Network Call Example
+** (Demonstrating a simple network call with progress, error handling, retry, and reload)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/network_example.dart)
 
-#### Random examples in Flutter
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/silver_appbar_with_tabbar.dart" target="_blank">
-**Silver AppBar With Tabbar** (Working example of Silver AppBar with Tabbar)</a></a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/network_example.dart" target="_blank">
-**Network Call Example** (Simple example of network call with progress, error, retry &
-reload)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dialog.dart" target="_blank">
-**Dialog Example** (Display custom dialog on button click
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/weather.dart" target="_blank">
-**Weather Example** (Parse custom JSON example)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/alert_dialog.dart" target="_blank">
-**Alert Dialog Example** (Display alert dialog on button click)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/posts.dart" target="_blank">
-**Network Call On Button Click** (Example of network request on button click)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dropdown_button_navigation.dart" target="_blank">
-**DropDown Button** (Dropdown on AppBar)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/app_bar_with_text_menu.dart" target="_blank">
-**AppBar With Text Menu** (Example of text on AppBar menu)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/stack_of_cards.dart" target="_blank">
-**Card Stacks** (Stack of cards using Stack Widget)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/fab.dart" target="_blank">
-**Floating Action Button Example** (Floating Action Button with show SnackBar on press)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/grid_view.dart" target="_blank">
-**Grid View** (Grid View Example on Flutter)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/expansion_tiles.dart" target="_blank">
-**Expansion Tiles Example** (Multilevel Expansion Tiles)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/time_tracking.dart" target="_blank">
-**Time Tracker** (Time tracking application example)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/snackbar_dialog.dart" target="_blank">
-**SnackBar Dialog** (Show SnackBar on button press)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/list_detail_example.dart" target="_blank">
-**List Detail Example** (Example of navigation from list to detail screen)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/webview_example.dart" target="_blank">
-**Web View Example** (Example of WebView with open in external browser option)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/pull_to_refresh.dart" target="_blank">
-**Pull To Refresh Example** (Pull To Refresh Example)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/location.dart" target="_blank">
-**Location** (Get user's current location in Flutter)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/webview_back.dart" target="_blank">
-**WebView With Back** (WebView with back button associated with history of page loaded)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/reload_state_on_resume.dart" target="_blank">
-**Reload State On Resume** (Event on first screen when user navigates back to first screen from
-second screen.)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/multiple_network_requests.dart" target="_blank">
-**Multiple Network Request** (Combining multiple network request in Flutter to single Future and
-FutureBuilder.)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/splash.dart" target="_blank">
-**Splash Screen** (Example of Splash Screen.)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dynamic_key_json.dart" target="_blank">
-**Dynamic Key Json** (Parse Json data with dynamic keys)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/color_utils.dart" target="_blank">
-**Color Utils** (Color utility methods like create color from hex code, convert color to material
-color, convert color to theme. This can be useful to create theme for app with single color or hex
-code.)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/custom_appbar_theme.dart" target="_blank">
-**Custom AppBar Theme** (AppBar with custom theme color. This can be useful to create different
-screen with different theme.)</a></a>
-_ <a href="https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/save_custom_object.dart" target="_blank">
-**Save Custom Object** (Save Custom Object to Shared Preferences.)</a></a>
+[**Dialog Example
+** (Illustrating a custom dialog triggered by button click)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dialog.dart)
+
+[**Weather Example
+** (Parsing custom JSON data for weather information)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/weather.dart)
+
+[**Alert Dialog Example
+** (Displaying an alert dialog upon button press)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/alert_dialog.dart)
+
+[**Network Call On Button Click
+** (Performing a network request upon button click)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/posts.dart)
+
+[**DropDown Button
+** (Implementing a dropdown menu on the AppBar)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dropdown_button_navigation.dart)
+
+[**AppBar With Text Menu
+** (Utilizing text items within the AppBar menu)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/app_bar_with_text_menu.dart)
+
+[**Card Stacks
+** (Creating a stack of cards using Stack Widget)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/stack_of_cards.dart)
+
+[**Floating Action Button Example
+** (Integrating a Floating Action Button with a SnackBar on press)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/fab.dart)
+
+[**Grid View
+** (Implementing a Grid View in Flutter)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/grid_view.dart)
+
+[**Expansion Tiles Example
+** (Illustrating multilevel Expansion Tiles)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/expansion_tiles.dart)
+
+[**Time Tracker
+** (An example of a time tracking application)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/time_tracking.dart)
+
+[**SnackBar Dialog
+** (Displaying a SnackBar upon button press)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/snackbar_dialog.dart)
+
+[**List Detail Example
+** (Navigating from a list to a detail screen)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/list_detail_example.dart)
+
+[**Web View Example
+** (Implementing a WebView with an option to open in an external browser)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/webview_example.dart)
+
+[**Pull To Refresh Example
+** (Demonstrating the Pull To Refresh functionality)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/pull_to_refresh.dart)
+
+[**Location
+** (Retrieving the user's current location in Flutter)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/location.dart)
+
+[**WebView With Back
+** (WebView with a back button associated with the page history)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/webview_back.dart)
+
+[**Reload State On Resume
+** (Handling events upon returning to the first screen from the second screen)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/reload_state_on_resume.dart)
+
+[**Multiple Network Request
+** (Combining multiple network requests into a single Future and FutureBuilder)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/multiple_network_requests.dart)
+
+[**Splash Screen
+** (Implementing a Splash Screen)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/splash.dart)
+
+[**Dynamic Key Json
+** (Parsing JSON data with dynamic keys)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/dynamic_key_json.dart)
+
+[**Color Utils
+** (Utility methods for manipulating colors, such as creating colors from hex codes and converting colors)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/color_utils.dart)
+
+[**Custom AppBar Theme
+** (Creating an AppBar with a custom theme color)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/custom_appbar_theme.dart)
+
+[**Save Custom Object
+** (Saving Custom Objects to Shared Preferences)](https://github.com/sharmadhiraj/flutter_examples/blob/master/lib/screens/save_custom_object.dart)
