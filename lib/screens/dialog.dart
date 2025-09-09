@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DialogExampleScreen extends StatelessWidget {
+  const DialogExampleScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var bodyProgress = Container(
+    final bodyProgress = Container(
       decoration: BoxDecoration(
         color: Colors.blue[200],
         borderRadius: BorderRadius.circular(2),
@@ -12,7 +14,6 @@ class DialogExampleScreen extends StatelessWidget {
       height: 200,
       alignment: AlignmentDirectional.center,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
@@ -20,7 +21,6 @@ class DialogExampleScreen extends StatelessWidget {
               height: 50,
               width: 50,
               child: CircularProgressIndicator(
-                value: null,
                 strokeWidth: 7,
               ),
             ),

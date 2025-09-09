@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class NewsDashboard extends StatefulWidget {
+  const NewsDashboard({Key? key}) : super(key: key);
+
   @override
   _NewsDashboardState createState() => _NewsDashboardState();
 }
@@ -43,13 +45,12 @@ class _NewsDashboardState extends State<NewsDashboard> {
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           height: 160,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: snapshot.data![0]
-                                .map((i) => getNewsListItem(i))
-                                .toList(),
+                            children:
+                                snapshot.data![0].map(getNewsListItem).toList(),
                           ),
                         ),
                         Padding(
@@ -62,13 +63,12 @@ class _NewsDashboardState extends State<NewsDashboard> {
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           height: 160,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: snapshot.data![1]
-                                .map((i) => getNewsListItem(i))
-                                .toList(),
+                            children:
+                                snapshot.data![1].map(getNewsListItem).toList(),
                           ),
                         ),
                       ],
@@ -91,7 +91,7 @@ class _NewsDashboardState extends State<NewsDashboard> {
   Widget getNewsListItem(News news) {
     return Card(
       elevation: 2,
-      child: Container(
+      child: SizedBox(
         width: 240,
         child: Stack(
           children: [
@@ -126,23 +126,24 @@ class _NewsDashboardState extends State<NewsDashboard> {
   }
 
   Future<List<List<News>>> getNews() async {
-    List<List<News>> news = [];
-    news.add(await getTopHeadlines());
-    news.add(await getEverything());
+    final List<List<News>> news = [
+      await getTopHeadlines(),
+      await getEverything()
+    ];
     return news;
   }
 
   Future<List<News>> getTopHeadlines() async {
     final String url =
         "https://newsapi.org/v2/top-headlines?category=technology&apiKey=$apiKey";
-    final response = await http.get(Uri.parse(url));
+    final http.Response response = await http.get(Uri.parse(url));
     return News.parseBody(json.decode(response.body));
   }
 
   Future<List<News>> getEverything() async {
     final String url =
         "https://newsapi.org/v2/everything?q=technology&apiKey=$apiKey";
-    final response = await http.get(Uri.parse(url));
+    final http.Response response = await http.get(Uri.parse(url));
     return News.parseBody(json.decode(response.body));
   }
 }

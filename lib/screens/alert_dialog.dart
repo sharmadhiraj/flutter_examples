@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/util/data.dart';
 
 class AlertDialogScreen extends StatelessWidget {
+  const AlertDialogScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class AlertDialogScreen extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: Colors.white,
-        title: Text(APP_NAME),
+        title: Text(appName),
         content: Text("Example of simple alert dialog"),
         actions: [
           TextButton(

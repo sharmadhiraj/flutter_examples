@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/util/method.dart';
 
 class ListExampleScreen extends StatelessWidget {
-  final List<String> listItems = [
+  static const List<String> listItems = [
     "Android",
     "Flutter",
     "iOS",
@@ -10,6 +10,8 @@ class ListExampleScreen extends StatelessWidget {
     "Kotlin",
     "Dart"
   ];
+
+  const ListExampleScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class ListExampleScreen extends StatelessWidget {
 class DetailScreen extends StatelessWidget {
   final String title;
 
-  DetailScreen(this.title);
+  const DetailScreen(this.title, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

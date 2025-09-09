@@ -31,10 +31,12 @@ import 'util/data.dart';
 import 'util/method.dart';
 
 class ListScreen extends StatelessWidget {
+  const ListScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(APP_NAME)),
+      appBar: AppBar(title: Text(appName)),
       body: ListView(
         children: getScreens()
             .map((screen) => Card(
@@ -56,7 +58,7 @@ class ListScreen extends StatelessWidget {
   }
 
   List<Screen> getScreens() {
-    List<Screen> screens = [
+    final List<Screen> screens = [
       Screen(
         "Silver AppBar With Tabbar",
         "Working example of Silver AppBar with Tabbar",
@@ -187,8 +189,7 @@ class ListScreen extends StatelessWidget {
         "Save Custom Object to Shared Preferences.",
         SaveCustomObjectExampleScreen(),
       ),
-    ];
-    screens.sort((a, b) => a.title.compareTo(b.title));
+    ]..sort((a, b) => a.title.compareTo(b.title));
     return screens;
   }
 }

@@ -1,1 +1,1 @@
-final String APP_NAME = "Flutter Examples";
+const String appName = "Flutter Examples";

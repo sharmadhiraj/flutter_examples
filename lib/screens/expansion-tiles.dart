@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ExpansionTilesExample extends StatelessWidget {
+  const ExpansionTilesExample({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class ExpansionTilesExample extends StatelessWidget {
 class StuffInTiles extends StatelessWidget {
   final MyTile myTile;
 
-  StuffInTiles(this.myTile);
+  const StuffInTiles(this.myTile, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class SwipeToRefreshExample extends StatefulWidget {
+  const SwipeToRefreshExample({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _SwipeToRefreshState();
@@ -61,27 +63,29 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   }
 
   Future<User> getUser() async {
-    final response = await http.get(Uri.parse("https://randomuser.me/api/"));
+    final http.Response response =
+    await http.get(Uri.parse("https://randomuser.me/api/"));
     final responseJson = json.decode(response.body);
     return User.fromJson(responseJson);
   }
 
   Future<Null> _refresh() {
-    return getUser().then((_user) {
-      setState(() => user = _user);
+    return getUser().then((user) {
+      setState(() => user = user);
     });
   }
 }
 
 class User {
-  final String name, image;
+  final String name;
+  final String image;
 
   User(this.name, this.image);
 
   factory User.fromJson(Map<String, dynamic> json) {
-    json = json['results'][0];
-    String name = json['name']['first'] + " " + json['name']['last'];
-    String image = json['picture']['large'];
+    json = json["results"][0];
+    final String name = json['name']['first'] + " " + json['name']['last'];
+    final String image = json['picture']['large'];
     return User(name, image);
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class LocationScreen extends StatelessWidget {
+  const LocationScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +13,8 @@ class LocationScreen extends StatelessWidget {
       body: Center(
         child: FutureBuilder<Position>(
           future: Geolocator.getCurrentPosition(
-              desiredAccuracy: LocationAccuracy.high),
+            desiredAccuracy: LocationAccuracy.high,
+          ),
           builder: (BuildContext context, AsyncSnapshot<Position> snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.none:
@@ -20,7 +23,7 @@ class LocationScreen extends StatelessWidget {
               case ConnectionState.waiting:
                 return Text("Fetching Location");
               case ConnectionState.done:
-                Position? location = snapshot.data;
+                final Position? location = snapshot.data;
                 return Text(
                   snapshot.hasData && location != null
                       ? "Location: ${location.latitude},${location.longitude}"

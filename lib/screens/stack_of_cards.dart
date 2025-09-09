@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardStackScreen extends StatelessWidget {
+  const CardStackScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +18,9 @@ class CardStackScreen extends StatelessWidget {
                 elevation: 8,
                 color: Colors.red,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Container(width: 220, height: 300),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: SizedBox(width: 220, height: 300),
               ),
             ),
             Positioned(
@@ -27,7 +30,7 @@ class CardStackScreen extends StatelessWidget {
                 color: Colors.green,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                child: Container(width: 230, height: 300),
+                child: SizedBox(width: 230, height: 300),
               ),
             ),
             Positioned(
@@ -37,7 +40,7 @@ class CardStackScreen extends StatelessWidget {
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                child: Container(width: 240, height: 300),
+                child: SizedBox(width: 240, height: 300),
               ),
             ),
           ],

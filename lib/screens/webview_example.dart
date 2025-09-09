@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewScreen extends StatelessWidget {
+class WebViewScreen extends StatefulWidget {
+  const WebViewScreen({Key? key}) : super(key: key);
+
+  @override
+  _WebViewScreenState createState() => _WebViewScreenState();
+}
+
+class _WebViewScreenState extends State<WebViewScreen> {
+  late final WebViewController _controller;
+  final String url = "https://www.google.com/";
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse(url));
+  }
+
   @override
   Widget build(BuildContext context) {
-    final String url = "https://www.google.com/";
-
-    return WebviewScaffold(
-      url: url,
+    return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
+        title: const Text("Web View"),
+        actions: [
           Container(
+            margin: const EdgeInsets.only(right: 10),
             child: ElevatedButton(
-              child: Text("Open In Browser"),
-              onPressed: () => launchUrl(Uri.parse(url)),
+              onPressed: () async {
+                final uri = Uri.parse(url);
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
+                }
+              },
+              child: const Text("Open In Browser"),
             ),
-            margin: EdgeInsets.only(right: 10),
-          )
+          ),
         ],
       ),
+      body: WebViewWidget(controller: _controller),
     );
   }
 }

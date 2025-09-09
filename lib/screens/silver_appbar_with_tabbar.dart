@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SilverAppBarWithTabBarScreen extends StatefulWidget {
+  const SilverAppBarWithTabBarScreen({Key? key}) : super(key: key);
+
   @override
   _SilverAppBarWithTabBarState createState() => _SilverAppBarWithTabBarState();
 }

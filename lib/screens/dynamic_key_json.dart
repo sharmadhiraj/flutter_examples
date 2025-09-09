@@ -50,7 +50,7 @@ class User {
   User(this.id, this.name, this.email);
 
   static List<User> parseList(Map<String, dynamic> map) {
-    List<User> users = [];
+    final List<User> users = [];
     map.forEach((key, value) {
       users.add(User(key, value["first_name"], value["email"]));
     });
@@ -59,6 +59,8 @@ class User {
 }
 
 class DynamicKeyJsonExampleScreen extends StatelessWidget {
+  const DynamicKeyJsonExampleScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

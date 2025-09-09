@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Post> fetchPost() async {
-  final response =
+  final http.Response response =
       await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'));
 
   if (response.statusCode == 200) {
@@ -39,7 +39,7 @@ class Post {
 }
 
 class NetworkCall extends StatefulWidget {
-  NetworkCall();
+  const NetworkCall({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -59,11 +59,9 @@ class NetworkCallState extends State<NetworkCall> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              child: ElevatedButton(
-                child: Text('Call'),
-                onPressed: () => _fetchPost(),
-              ),
+            ElevatedButton(
+              onPressed: _fetchPost,
+              child: Text('Call'),
             ),
             Container(
               padding: const EdgeInsets.all(16),

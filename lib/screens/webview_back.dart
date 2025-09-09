@@ -1,49 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class WebviewInFlutter extends StatefulWidget {
-  WebviewInFlutter({Key? key}) : super(key: key);
+  const WebviewInFlutter({Key? key}) : super(key: key);
 
   @override
   _WebviewInFlutterState createState() => _WebviewInFlutterState();
 }
 
 class _WebviewInFlutterState extends State<WebviewInFlutter> {
-  final flutterWebviewPlugin = FlutterWebviewPlugin();
+  late final WebViewController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse('https://google.com'));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
-      url: 'https://google.com',
-      hidden: true,
-      appCacheEnabled: true,
-      withJavascript: true,
-      withLocalStorage: true,
-      appBar: AppBar(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        if (await _controller.canGoBack()) {
+          _controller.goBack();
+        } else {
+          Navigator.of(context).pop(true);
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
           leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                flutterWebviewPlugin.canGoBack().then((value) {
-                  if (value) {
-                    flutterWebviewPlugin.goBack();
-                  } else {
-                    Navigator.pop(context);
-                  }
-                });
-              }),
-          actions: <Widget>[
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () async {
+              if (await _controller.canGoBack()) {
+                _controller.goBack();
+              } else {
+                Navigator.pop(context);
+              }
+            },
+          ),
+          actions: [
             IconButton(
-              icon: Icon(
-                Icons.refresh,
-                color: Color.fromRGBO(255, 255, 255, 1),
-              ),
-              onPressed: () => flutterWebviewPlugin
-                  .reload(), // this is reloading the url that was provided to webview, not the current URL.
-            )
+              icon: const Icon(Icons.refresh),
+              onPressed: () => _controller.reload(),
+            ),
           ],
-          elevation: 1,
           centerTitle: true,
-          title: Text("Google Mobile")),
+          title: const Text("Google Mobile"),
+        ),
+        body: WebViewWidget(controller: _controller),
+      ),
     );
   }
 }
