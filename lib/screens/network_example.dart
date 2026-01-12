@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class NetworkExampleScreen extends StatefulWidget {
-  const NetworkExampleScreen({Key? key}) : super(key: key);
+  const NetworkExampleScreen({super.key});
 
   @override
-  _NetworkExampleScreenState createState() => _NetworkExampleScreenState();
+  State<NetworkExampleScreen> createState() => _NetworkExampleScreenState();
 }
 
 class _NetworkExampleScreenState extends State<NetworkExampleScreen> {

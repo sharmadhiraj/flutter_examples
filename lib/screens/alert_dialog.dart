@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/util/data.dart';
 
 class AlertDialogScreen extends StatelessWidget {
-  const AlertDialogScreen({Key? key}) : super(key: key);
+  const AlertDialogScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

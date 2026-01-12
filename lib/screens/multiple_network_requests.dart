@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class NewsDashboard extends StatefulWidget {
-  const NewsDashboard({Key? key}) : super(key: key);
+  const NewsDashboard({super.key});
 
   @override
-  _NewsDashboardState createState() => _NewsDashboardState();
+  State<NewsDashboard> createState() => _NewsDashboardState();
 }
 
 class _NewsDashboardState extends State<NewsDashboard> {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CardStackScreen extends StatelessWidget {
-  const CardStackScreen({Key? key}) : super(key: key);
+  const CardStackScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -6,10 +6,10 @@ import 'package:flutter_examples/util/method.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SaveCustomObjectExampleScreen extends StatefulWidget {
-  const SaveCustomObjectExampleScreen({Key? key}) : super(key: key);
+  const SaveCustomObjectExampleScreen({super.key});
 
   @override
-  _SaveCustomObjectExampleScreenState createState() =>
+  State<SaveCustomObjectExampleScreen> createState() =>
       _SaveCustomObjectExampleScreenState();
 }
 

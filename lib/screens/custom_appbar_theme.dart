@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarThemeExample extends StatelessWidget {
-  const CustomAppBarThemeExample({Key? key}) : super(key: key);
+  const CustomAppBarThemeExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,8 @@ class CustomAppBarThemeExample extends StatelessWidget {
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  CustomAppBar({Key? key})
-      : appBar = AppBar(title: const Text("Custom AppBar Theme")),
-        super(key: key);
+  CustomAppBar({super.key})
+      : appBar = AppBar(title: const Text("Custom AppBar Theme"));
 
   @override
   Widget build(BuildContext context) {

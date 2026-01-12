@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppBarWithTextMenuScreen extends StatelessWidget {
-  const AppBarWithTextMenuScreen({Key? key}) : super(key: key);
+  const AppBarWithTextMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

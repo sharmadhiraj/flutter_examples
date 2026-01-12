@@ -31,7 +31,7 @@ import 'util/data.dart';
 import 'util/method.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +152,7 @@ class HomeScreen extends StatelessWidget {
       Screen(
         "WebView With Back",
         "WebView with back button associated with history of page loaded.",
-        const WebviewInFlutter(),
+        const WebViewInFlutter(),
       ),
       Screen(
         "Reload State On Resume",

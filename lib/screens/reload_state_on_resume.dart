@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatefulWidget {
-  const FirstScreen({Key? key}) : super(key: key);
+  const FirstScreen({super.key});
 
   @override
-  _FirstScreenState createState() => _FirstScreenState();
+  State<FirstScreen> createState() => _FirstScreenState();
 }
 
 class _FirstScreenState extends State<FirstScreen> {
@@ -41,7 +41,7 @@ class _FirstScreenState extends State<FirstScreen> {
 }
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

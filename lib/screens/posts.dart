@@ -39,7 +39,7 @@ class Post {
 }
 
 class NetworkCall extends StatefulWidget {
-  const NetworkCall({Key? key}) : super(key: key);
+  const NetworkCall({super.key});
 
   @override
   State<StatefulWidget> createState() {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebviewInFlutter extends StatefulWidget {
-  const WebviewInFlutter({Key? key}) : super(key: key);
+class WebViewInFlutter extends StatefulWidget {
+  const WebViewInFlutter({super.key});
 
   @override
-  _WebviewInFlutterState createState() => _WebviewInFlutterState();
+  State<WebViewInFlutter> createState() => _WebViewInFlutterState();
 }
 
-class _WebviewInFlutterState extends State<WebviewInFlutter> {
+class _WebViewInFlutterState extends State<WebViewInFlutter> {
   late final WebViewController _controller;
 
   @override
@@ -25,10 +25,12 @@ class _WebviewInFlutterState extends State<WebviewInFlutter> {
       canPop: false,
       onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
+        final NavigatorState navigator = Navigator.of(context);
         if (await _controller.canGoBack()) {
           _controller.goBack();
         } else {
-          Navigator.of(context).pop(true);
+          if (!mounted) return;
+          navigator.pop(true);
         }
       },
       child: Scaffold(
@@ -36,10 +38,12 @@ class _WebviewInFlutterState extends State<WebviewInFlutter> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () async {
+              final NavigatorState navigator = Navigator.of(context);
               if (await _controller.canGoBack()) {
                 _controller.goBack();
               } else {
-                Navigator.pop(context);
+                if (!mounted) return;
+                navigator.pop();
               }
             },
           ),

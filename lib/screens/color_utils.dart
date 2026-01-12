@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorUtilsScreen extends StatelessWidget {
-  const ColorUtilsScreen({Key? key}) : super(key: key);
+  const ColorUtilsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SnackBarScreen extends StatelessWidget {
-  const SnackBarScreen({Key? key}) : super(key: key);
+  const SnackBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

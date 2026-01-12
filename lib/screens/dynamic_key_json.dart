@@ -59,7 +59,7 @@ class User {
 }
 
 class DynamicKeyJsonExampleScreen extends StatelessWidget {
-  const DynamicKeyJsonExampleScreen({Key? key}) : super(key: key);
+  const DynamicKeyJsonExampleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

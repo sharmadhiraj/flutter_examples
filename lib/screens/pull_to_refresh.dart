@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class SwipeToRefreshExample extends StatefulWidget {
-  const SwipeToRefreshExample({Key? key}) : super(key: key);
+  const SwipeToRefreshExample({super.key});
 
   @override
   State<StatefulWidget> createState() {

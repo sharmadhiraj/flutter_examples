@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FabExampleScreen extends StatelessWidget {
-  const FabExampleScreen({Key? key}) : super(key: key);
+  const FabExampleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
