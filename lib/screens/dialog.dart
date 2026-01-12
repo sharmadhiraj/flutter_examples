@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DialogExampleScreen extends StatelessWidget {
-  const DialogExampleScreen({Key? key}) : super(key: key);
+  const DialogExampleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class DialogExampleScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(
+          const Center(
             child: SizedBox(
               height: 50,
               width: 50,
@@ -27,7 +27,7 @@ class DialogExampleScreen extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 25),
-            child: Center(
+            child: const Center(
               child: Text(
                 "Signing up...",
                 style: TextStyle(color: Colors.white),
@@ -39,15 +39,15 @@ class DialogExampleScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text("Dialog")),
+      appBar: AppBar(title: const Text("Dialog")),
       body: Center(
         child: ElevatedButton(
-          child: Text("Show"),
+          child: const Text("Show"),
           onPressed: () {
             showDialog(
               context: context,
               builder: (BuildContext context) => AlertDialog(
-                contentPadding: EdgeInsets.all(0),
+                contentPadding: EdgeInsets.zero,
                 content: bodyProgress,
               ),
             );

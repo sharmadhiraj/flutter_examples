@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CardStackScreen extends StatelessWidget {
-  const CardStackScreen({Key? key}) : super(key: key);
+  const CardStackScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Card Stack")),
+      appBar: AppBar(title: const Text("Card Stack")),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Stack(
@@ -20,7 +20,7 @@ class CardStackScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: SizedBox(width: 220, height: 300),
+                child: const SizedBox(width: 220, height: 300),
               ),
             ),
             Positioned(
@@ -30,7 +30,7 @@ class CardStackScreen extends StatelessWidget {
                 color: Colors.green,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                child: SizedBox(width: 230, height: 300),
+                child: const SizedBox(width: 230, height: 300),
               ),
             ),
             Positioned(
@@ -40,7 +40,7 @@ class CardStackScreen extends StatelessWidget {
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                child: SizedBox(width: 240, height: 300),
+                child: const SizedBox(width: 240, height: 300),
               ),
             ),
           ],

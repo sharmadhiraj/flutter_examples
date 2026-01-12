@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 const int splashPageVisibilityTime = 2;
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<StatefulWidget> createState() => _SplashScreenState();
@@ -16,21 +16,21 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: splashPageVisibilityTime),
+      const Duration(seconds: splashPageVisibilityTime),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 48),
+        padding: EdgeInsets.symmetric(horizontal: 48),
         child: Text(
           "Flutter Examples",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
@@ -41,13 +41,13 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
-      body: Center(child: Text("Flutter Examples")),
+      appBar: AppBar(title: const Text("Home")),
+      body: const Center(child: Text("Flutter Examples")),
     );
   }
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ColorUtilsScreen extends StatelessWidget {
-  const ColorUtilsScreen({Key? key}) : super(key: key);
+  const ColorUtilsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Color Utils")),
+      appBar: AppBar(title: const Text("Color Utils")),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

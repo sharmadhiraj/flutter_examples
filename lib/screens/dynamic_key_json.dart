@@ -59,13 +59,13 @@ class User {
 }
 
 class DynamicKeyJsonExampleScreen extends StatelessWidget {
-  const DynamicKeyJsonExampleScreen({Key? key}) : super(key: key);
+  const DynamicKeyJsonExampleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dynamic Key Json"),
+        title: const Text("Dynamic Key Json"),
       ),
       body: ListView(
         children: User.parseList(json.decode(jsonData))

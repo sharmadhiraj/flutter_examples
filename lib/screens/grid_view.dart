@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GridViewScreen extends StatelessWidget {
-  const GridViewScreen({Key? key}) : super(key: key);
+  const GridViewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class GridViewScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text("Grid Example")),
+      appBar: AppBar(title: const Text("Grid Example")),
       body: body,
     );
   }

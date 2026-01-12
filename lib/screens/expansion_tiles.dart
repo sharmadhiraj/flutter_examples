@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ExpansionTilesExample extends StatelessWidget {
-  const ExpansionTilesExample({Key? key}) : super(key: key);
+  const ExpansionTilesExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
           'Home',
           style: TextStyle(color: Colors.white),
         ),
@@ -26,7 +26,7 @@ class ExpansionTilesExample extends StatelessWidget {
 class StuffInTiles extends StatelessWidget {
   final MyTile myTile;
 
-  const StuffInTiles(this.myTile, {Key? key}) : super(key: key);
+  const StuffInTiles(this.myTile, {super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,13 +11,13 @@ class ListExampleScreen extends StatelessWidget {
     "Dart"
   ];
 
-  const ListExampleScreen({Key? key}) : super(key: key);
+  const ListExampleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List"),
+        title: const Text("List"),
       ),
       body: ListView(
           children: listItems
@@ -38,7 +38,7 @@ class ListExampleScreen extends StatelessWidget {
 class DetailScreen extends StatelessWidget {
   final String title;
 
-  const DetailScreen(this.title, {Key? key}) : super(key: key);
+  const DetailScreen(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {
