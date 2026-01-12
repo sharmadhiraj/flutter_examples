@@ -11,7 +11,7 @@ import 'screens/app_bar_with_text_menu.dart';
 import 'screens/bottom_nav_icon_size.dart';
 import 'screens/dialog.dart';
 import 'screens/dropdown_button_navigation.dart';
-import 'screens/expansion-tiles.dart';
+import 'screens/expansion_tiles.dart';
 import 'screens/fab.dart';
 import 'screens/grid_view.dart';
 import 'screens/list_detail_example.dart';
@@ -30,13 +30,13 @@ import 'screens/webview_example.dart';
 import 'util/data.dart';
 import 'util/method.dart';
 
-class ListScreen extends StatelessWidget {
-  const ListScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(appName)),
+      appBar: AppBar(title: const Text(appName)),
       body: ListView(
         children: getScreens()
             .map((screen) => Card(
@@ -44,7 +44,7 @@ class ListScreen extends StatelessWidget {
                     leading: CircleAvatar(child: Text(screen.avatar())),
                     title: Text(
                       screen.title,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(screen.subtitle.isEmpty
                         ? screen.title
@@ -62,132 +62,132 @@ class ListScreen extends StatelessWidget {
       Screen(
         "Silver AppBar With Tabbar",
         "Working example of Silver AppBar with Tabbar",
-        SilverAppBarWithTabBarScreen(),
+        const SilverAppBarWithTabBarScreen(),
       ),
       Screen(
         "Bottom Nav Icon Size",
         "Working example of customized size of BottomNaviagationBar icon size",
-        BottomNavIconSize(),
+        const BottomNavIconSize(),
       ),
       Screen(
         "Network Call Example",
         "Simple example of network call with progress, error, retry & reload",
-        NetworkExampleScreen(),
+        const NetworkExampleScreen(),
       ),
       Screen(
         "Dialog Example",
         "Display custom dialog on button click",
-        DialogExampleScreen(),
+        const DialogExampleScreen(),
       ),
       Screen(
         "Weather Example",
         "Parse custom Json example",
-        WeatherScreen(),
+        const WeatherScreen(),
       ),
       Screen(
         "Alert Dialog Example",
         "Display alert dialog on button click",
-        AlertDialogScreen(),
+        const AlertDialogScreen(),
       ),
       Screen(
         "Network Call On Button Click",
         "Example of network request on button click",
-        NetworkCall(),
+        const NetworkCall(),
       ),
       Screen(
         "DropDown Button",
         "Dropdown on AppBar",
-        DropDownButtonScreen(),
+        const DropDownButtonScreen(),
       ),
       Screen(
         "AppBar With Text Menu",
         "Example of text on AppBar menu",
-        AppBarWithTextMenuScreen(),
+        const AppBarWithTextMenuScreen(),
       ),
       Screen(
         "Card Stacks",
         "Stack of cards using Stack Widget",
-        CardStackScreen(),
+        const CardStackScreen(),
       ),
       Screen(
         "Floating Action Button Example",
         "Floating Action Button with show SnackBar on press",
-        FabExampleScreen(),
+        const FabExampleScreen(),
       ),
       Screen(
         "Grid View",
         "Grid View Example on Flutter",
-        GridViewScreen(),
+        const GridViewScreen(),
       ),
       Screen(
         "Expansion Tiles Example",
         "Multilevel Expansion Tiles",
-        ExpansionTilesExample(),
+        const ExpansionTilesExample(),
       ),
       Screen(
         "SnackBar Dialog",
         "Show SnackBar on button press",
-        SnackBarScreen(),
+        const SnackBarScreen(),
       ),
       Screen(
         "List Detail Example",
         "Example of navigation from list to detail screen",
-        ListExampleScreen(),
+        const ListExampleScreen(),
       ),
       Screen(
         "Web View Example",
         "Example of WebView with open in external browser option",
-        WebViewScreen(),
+        const WebViewScreen(),
       ),
       Screen(
         "Pull To Refresh Example",
         "",
-        SwipeToRefreshExample(),
+        const SwipeToRefreshExample(),
       ),
       Screen(
         "Location",
         "Get user's current location in Flutter",
-        LocationScreen(),
+        const LocationScreen(),
       ),
       Screen(
         "WebView With Back",
         "WebView with back button associated with history of page loaded.",
-        WebviewInFlutter(),
+        const WebviewInFlutter(),
       ),
       Screen(
         "Reload State On Resume",
         "Event on first screen when user navigates back to first screen from second screen.",
-        FirstScreen(),
+        const FirstScreen(),
       ),
       Screen(
         "Multiple Network Request",
         "Combining multiple network request in Flutter to single Future and FutureBuilder.",
-        NewsDashboard(),
+        const NewsDashboard(),
       ),
       Screen(
         "Splash Screen",
         "Example of Splash Screen",
-        SplashScreen(),
+        const SplashScreen(),
       ),
       Screen(
         "Dynamic Key Json",
         "Parse Json data with dynamic keys",
-        DynamicKeyJsonExampleScreen(),
+        const DynamicKeyJsonExampleScreen(),
       ),
       Screen(
         "Color Utils",
         "Color utility methods like create color from hex code, convert color to material color, convert color to theme. This can be useful to create theme for app with single color or hex code.",
-        ColorUtilsScreen(),
+        const ColorUtilsScreen(),
       ),
       Screen(
         "Custom AppBar Theme",
         "AppBar with custom theme color. This can be useful to create different screen with different theme.",
-        CustomAppBarThemeExample(),
+        const CustomAppBarThemeExample(),
       ),
       Screen(
         "Save Custom Object",
         "Save Custom Object to Shared Preferences.",
-        SaveCustomObjectExampleScreen(),
+        const SaveCustomObjectExampleScreen(),
       ),
     ]..sort((a, b) => a.title.compareTo(b.title));
     return screens;

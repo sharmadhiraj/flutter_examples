@@ -13,7 +13,7 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Reload State On Resume")),
+      appBar: AppBar(title: const Text("Reload State On Resume")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -22,16 +22,16 @@ class _FirstScreenState extends State<FirstScreen> {
               padding: const EdgeInsets.all(12),
               child: Text(
                 message,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
               ),
             ),
             ElevatedButton(
               onPressed: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SecondScreen()),
+                MaterialPageRoute(builder: (context) => const SecondScreen()),
               ).then((value) =>
                   setState(() => message = DateTime.now().toIso8601String())),
-              child: Text("Go To Next Screen"),
+              child: const Text("Go To Next Screen"),
             )
           ],
         ),
@@ -46,11 +46,11 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Second Screen")),
+      appBar: AppBar(title: const Text("Second Screen")),
       body: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pop(context),
-          child: Text("Go Back"),
+          child: const Text("Go Back"),
         ),
       ),
     );

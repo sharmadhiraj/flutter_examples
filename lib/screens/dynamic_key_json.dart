@@ -65,7 +65,7 @@ class DynamicKeyJsonExampleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dynamic Key Json"),
+        title: const Text("Dynamic Key Json"),
       ),
       body: ListView(
         children: User.parseList(json.decode(jsonData))

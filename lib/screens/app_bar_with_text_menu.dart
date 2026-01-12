@@ -7,10 +7,10 @@ class AppBarWithTextMenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Title"),
+        title: const Text("Title"),
         actions: <Widget>[
           Container(),
-          Center(
+          const Center(
             child: Text(
               "User name",
               textScaler: TextScaler.linear(1.5),
@@ -21,7 +21,7 @@ class AppBarWithTextMenuScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
             tooltip: 'Closes application',
             onPressed: () {},
           ),

@@ -32,14 +32,12 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Swipe To Refresh"),
+        title: const Text("Swipe To Refresh"),
         actions: <Widget>[
           IconButton(
               icon: const Icon(Icons.refresh),
               tooltip: 'Refresh',
-              onPressed: () {
-                _refreshIndicatorKey.currentState?.show();
-              }),
+              onPressed: () => _refreshIndicatorKey.currentState?.show()),
         ],
       ),
       body: RefreshIndicator(
@@ -52,7 +50,7 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
                 child: Column(
                   children: <Widget>[
                     Image.network(user.image, height: 128, width: 128),
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                     Text(user.name),
                   ],
                 ),
@@ -64,8 +62,8 @@ class _SwipeToRefreshState extends State<SwipeToRefreshExample> {
 
   Future<User> getUser() async {
     final http.Response response =
-    await http.get(Uri.parse("https://randomuser.me/api/"));
-    final responseJson = json.decode(response.body);
+        await http.get(Uri.parse("https://randomuser.me/api/"));
+    final dynamic responseJson = json.decode(response.body);
     return User.fromJson(responseJson);
   }
 
@@ -84,7 +82,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     json = json["results"][0];
-    final String name = json['name']['first'] + " " + json['name']['last'];
+    final String name = "${json['name']['first']} ${json['name']['last']}";
     final String image = json['picture']['large'];
     return User(name, image);
   }

@@ -17,7 +17,7 @@ class ListExampleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List"),
+        title: const Text("List"),
       ),
       body: ListView(
           children: listItems

@@ -7,8 +7,8 @@ class ExpansionTilesExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
           'Home',
           style: TextStyle(color: Colors.white),
         ),

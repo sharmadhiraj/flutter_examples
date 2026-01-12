@@ -24,7 +24,7 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Network Example")),
+      appBar: AppBar(title: const Text("Network Example")),
       body: Center(
         child: FutureBuilder<Item>(
           future: _futureItem,
@@ -43,24 +43,25 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
                             padding: const EdgeInsets.all(24),
                             child: Text(
                               snapshot.data!.title,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                           ElevatedButton(
                             onPressed: () =>
                                 setState(() => _futureItem = _getItem()),
-                            child: Text("Another"),
+                            child: const Text("Another"),
                           )
                         ],
                       )
                     : InkWell(
-                        child: Padding(
-                          padding: const EdgeInsets.all(32),
+                        child: const Padding(
+                          padding: EdgeInsets.all(32),
                           child: Text("ERROR OCCURRED, Tap to retry !"),
                         ),
                         onTap: () => setState(() => _futureItem = _getItem()),
                       )
-                : CircularProgressIndicator();
+                : const CircularProgressIndicator();
           },
         ),
       ),
@@ -70,7 +71,7 @@ class _NetworkExampleScreenState extends State<NetworkExampleScreen> {
   Future<Item> _getItem() async {
     final http.Response response = await http.get(Uri.parse(
         "https://jsonplaceholder.typicode.com/photos/${Random().nextInt(5000)}"));
-    final responseJson = json.decode(response.body);
+    final dynamic responseJson = json.decode(response.body);
     return Item.fromJson(responseJson);
   }
 }

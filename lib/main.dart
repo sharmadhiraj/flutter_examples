@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'list.dart';
+import 'home.dart';
 
 void main() {
-  runApp(MaterialApp(home: ListScreen()));
+  runApp(const MaterialApp(home: HomeScreen()));
 }

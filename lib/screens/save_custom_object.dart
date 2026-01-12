@@ -26,7 +26,7 @@ class _SaveCustomObjectExampleScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Save Custom Object Example')),
+      appBar: AppBar(title: const Text('Save Custom Object Example')),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -37,11 +37,11 @@ class _SaveCustomObjectExampleScreenState
                 _saveUser();
                 navigate(
                   context,
-                  SaveCustomObjectExampleScreen(),
+                  const SaveCustomObjectExampleScreen(),
                   finish: true,
                 );
               },
-              child: Text("Save User"),
+              child: const Text("Save User"),
             )
           else
             ElevatedButton(
@@ -49,11 +49,11 @@ class _SaveCustomObjectExampleScreenState
                 _deleteUser();
                 navigate(
                   context,
-                  SaveCustomObjectExampleScreen(),
+                  const SaveCustomObjectExampleScreen(),
                   finish: true,
                 );
               },
-              child: Text("Delete User"),
+              child: const Text("Delete User"),
             )
         ],
       ),
@@ -62,9 +62,9 @@ class _SaveCustomObjectExampleScreenState
 
   Widget _buildUser() {
     if (_user == null) {
-      return Center(
+      return const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           child: Text("No user saved"),
         ),
       );
@@ -72,15 +72,15 @@ class _SaveCustomObjectExampleScreenState
       return Column(
         children: [
           ListTile(
-            title: Text("Name"),
+            title: const Text("Name"),
             subtitle: Text(_user!.name),
           ),
           ListTile(
-            title: Text("Email"),
+            title: const Text("Email"),
             subtitle: Text(_user!.email),
           ),
           ListTile(
-            title: Text("Address"),
+            title: const Text("Address"),
             subtitle: Text(_user!.address),
           ),
         ],

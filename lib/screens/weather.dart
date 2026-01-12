@@ -11,7 +11,7 @@ class WeatherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("G.C. - WEATHER"),
+        title: const Text("G.C. - WEATHER"),
         centerTitle: true,
         backgroundColor: Colors.blue[700],
       ),
@@ -41,7 +41,7 @@ class WeatherScreen extends StatelessWidget {
                   child: Text(snapshot.error.toString()),
                 ));
               }
-              return Center(
+              return const Center(
                 child: Column(
                   children: <Widget>[
                     Padding(padding: EdgeInsets.all(50)),
@@ -60,7 +60,7 @@ class WeatherScreen extends StatelessWidget {
 Future<List<Post>> fetchPosts() async {
   final http.Response response = await http.get(Uri.parse(
       'http://ws1.metcheck.com/ENGINE/v9_0/json.asp?lat=28&lon=-15.6&lid=62228&Fc=No'));
-  final responseJson = json.decode(response.body);
+  final dynamic responseJson = json.decode(response.body);
   return (responseJson['metcheckData']['forecastLocation']['forecast'] as List)
       .map((p) => Post.fromJson(p))
       .toList();

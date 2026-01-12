@@ -7,11 +7,11 @@ class AlertDialogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Alert Dialog")),
+      appBar: AppBar(title: const Text("Alert Dialog")),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _showAlert(context),
-          child: Text("Show Alert Dialog"),
+          child: const Text("Show Alert Dialog"),
         ),
       ),
     );
@@ -22,8 +22,8 @@ class AlertDialogScreen extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: Colors.white,
-        title: Text(appName),
-        content: Text("Example of simple alert dialog"),
+        title: const Text(appName),
+        content: const Text("Example of simple alert dialog"),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),

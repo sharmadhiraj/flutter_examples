@@ -31,7 +31,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
             margin: const EdgeInsets.only(right: 10),
             child: ElevatedButton(
               onPressed: () async {
-                final uri = Uri.parse(url);
+                final Uri uri = Uri.parse(url);
                 if (await canLaunchUrl(uri)) {
                   await launchUrl(uri, mode: LaunchMode.externalApplication);
                 }

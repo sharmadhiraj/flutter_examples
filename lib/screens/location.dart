@@ -8,20 +8,20 @@ class LocationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User Location"),
+        title: const Text("User Location"),
       ),
       body: Center(
         child: FutureBuilder<Position>(
           future: Geolocator.getCurrentPosition(
-            desiredAccuracy: LocationAccuracy.high,
+            locationSettings: const LocationSettings(),
           ),
           builder: (BuildContext context, AsyncSnapshot<Position> snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.none:
-                return Text("No data");
+                return const Text("No data");
               case ConnectionState.active:
               case ConnectionState.waiting:
-                return Text("Fetching Location");
+                return const Text("Fetching Location");
               case ConnectionState.done:
                 final Position? location = snapshot.data;
                 return Text(

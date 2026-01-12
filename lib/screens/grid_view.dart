@@ -33,7 +33,7 @@ class GridViewScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text("Grid Example")),
+      appBar: AppBar(title: const Text("Grid Example")),
       body: body,
     );
   }

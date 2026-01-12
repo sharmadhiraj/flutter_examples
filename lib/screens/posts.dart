@@ -53,15 +53,15 @@ class NetworkCallState extends State<NetworkCall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Posts")),
+      appBar: AppBar(title: const Text("Posts")),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(6),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ElevatedButton(
               onPressed: _fetchPost,
-              child: Text('Call'),
+              child: const Text('Call'),
             ),
             Container(
               padding: const EdgeInsets.all(16),

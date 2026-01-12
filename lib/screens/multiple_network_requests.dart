@@ -24,7 +24,7 @@ class _NewsDashboardState extends State<NewsDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("News Dashboard"),
+        title: const Text("News Dashboard"),
       ),
       body: FutureBuilder<List<List<News>>>(
         future: _futureNews,
@@ -33,10 +33,9 @@ class _NewsDashboardState extends State<NewsDashboard> {
           return snapshot.connectionState == ConnectionState.done
               ? snapshot.hasData && snapshot.data != null
                   ? ListView(
-                      scrollDirection: Axis.vertical,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16),
+                        const Padding(
+                          padding: EdgeInsets.all(16),
                           child: Text(
                             "Top Headlines",
                             style: TextStyle(
@@ -53,8 +52,8 @@ class _NewsDashboardState extends State<NewsDashboard> {
                                 snapshot.data![0].map(getNewsListItem).toList(),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(16),
+                        const Padding(
+                          padding: EdgeInsets.all(16),
                           child: Text(
                             "Everything",
                             style: TextStyle(
@@ -74,15 +73,15 @@ class _NewsDashboardState extends State<NewsDashboard> {
                       ],
                     )
                   : InkWell(
-                      child: Center(
+                      child: const Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(32),
+                          padding: EdgeInsets.all(32),
                           child: Text("Something went wrong, Tap to retry !"),
                         ),
                       ),
                       onTap: () => setState(() => _futureNews = getNews()),
                     )
-              : Center(child: CircularProgressIndicator());
+              : const Center(child: CircularProgressIndicator());
         },
       ),
     );
@@ -106,12 +105,12 @@ class _NewsDashboardState extends State<NewsDashboard> {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   decoration:
-                      BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
+                      const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
                   padding: const EdgeInsets.all(12),
                   child: Text(
                     news.title,
                     maxLines: 2,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),

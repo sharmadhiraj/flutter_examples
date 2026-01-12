@@ -26,11 +26,11 @@ class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
           child: DropdownButton<String>(
             value: defaultValue,
             items: <DropdownMenuItem<String>>[
-              DropdownMenuItem(
+              const DropdownMenuItem(
                 value: "MEN",
                 child: Text('MEN'),
               ),
-              DropdownMenuItem(
+              const DropdownMenuItem(
                 value: "WOMEN",
                 child: Text('WOMEN'),
               ),
@@ -48,10 +48,10 @@ class _DropDownButtonScreenState extends State<DropDownButtonScreen> {
 
   Widget getBody() {
     if (defaultValue == "MEN") {
-      return Center(child: Text("Widget for men"));
+      return const Center(child: Text("Widget for men"));
     } else if (defaultValue == "WOMEN") {
-      return Center(child: Text("Widget for Women"));
+      return const Center(child: Text("Widget for Women"));
     }
-    return Center(child: Text("Widget not found"));
+    return const Center(child: Text("Widget not found"));
   }
 }

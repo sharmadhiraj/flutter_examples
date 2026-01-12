@@ -23,14 +23,14 @@ class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            title: Text("Silver AppBar With ToolBar"),
+            title: const Text("Silver AppBar With ToolBar"),
             pinned: true,
             expandedHeight: 160,
             bottom: TabBar(
               tabs: [
-                Tab(text: 'Tab 1'),
-                Tab(text: 'Tab 2'),
-                Tab(text: 'Tab 3'),
+                const Tab(text: 'Tab 1'),
+                const Tab(text: 'Tab 2'),
+                const Tab(text: 'Tab 3'),
               ],
               controller: controller,
             ),
@@ -39,9 +39,9 @@ class _SilverAppBarWithTabBarState extends State<SilverAppBarWithTabBarScreen>
             child: TabBarView(
               controller: controller,
               children: <Widget>[
-                Text("Tab 1"),
-                Text("Tab 2"),
-                Text("Tab 3"),
+                const Text("Tab 1"),
+                const Text("Tab 2"),
+                const Text("Tab 3"),
               ],
             ),
           ),

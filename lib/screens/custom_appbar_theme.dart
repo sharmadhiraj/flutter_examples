@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
   CustomAppBar({Key? key})
-      : appBar = AppBar(title: Text("Custom AppBar Theme")),
+      : appBar = AppBar(title: const Text("Custom AppBar Theme")),
         super(key: key);
 
   @override
