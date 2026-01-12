@@ -81,9 +81,9 @@ class User {
   User(this.name, this.image);
 
   factory User.fromJson(Map<String, dynamic> json) {
-    json = json["results"][0];
-    final String name = "${json['name']['first']} ${json['name']['last']}";
-    final String image = json['picture']['large'];
+    final Map<String, dynamic> result = json["results"][0];
+    final String name = "${result['name']['first']} ${result['name']['last']}";
+    final String image = result['picture']['large'];
     return User(name, image);
   }
 }
